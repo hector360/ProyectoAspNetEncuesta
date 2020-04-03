@@ -1,0 +1,297 @@
+﻿.requerido {
+    border: 2px solid #F25151;
+    background: #F8A2A2;
+    color: #fff;
+}
+
+body {
+    font-family: Georgia;
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor {
+    width: 100%;
+    /*background-color: #fff;*/
+}
+
+    .contenedor .header1 {
+        width: 100%;
+        /*background: #fff;*/
+    }
+
+        .contenedor .header1 .logo {
+            width: 30%;
+            margin: 0 auto;
+        }
+
+            .contenedor .header1 .logo img {
+                width: 100%;
+            }
+
+
+    .contenedor .contenido {
+        width: 50%;
+        height: 787px;
+        /*height: 100%;*/
+        /*margin-top: 40px;*/
+        overflow: hidden;
+        /*background-image: url("/Content/img/f3.png");*/
+        /*background: #DDE4E7;*/
+        background-repeat: no-repeat;
+        background-size: 100%;
+        /*margin-bottom: 40px;*/
+    }
+
+.container {
+    display: block;
+    position: relative;
+    /*padding-left: 35px;*/
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /* Hide the browser's default radio button */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: -56px;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #ECD472;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.contenedor .contenido .formulario {
+    width: 50%;
+    margin: 0 auto;
+}
+
+    .contenedor .contenido .formulario form {
+        width: 100%;
+        margin-top: 40px;
+        -webkit-box-shadow: 0px 0px 21px -10px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 21px -10px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 21px -10px rgba(0,0,0,0.75);
+    }
+
+        .contenedor .contenido .formulario form .secciones {
+            width: 100%;
+        }
+
+            .contenedor .contenido .formulario form .secciones .subTitulo {
+                width: 100%;
+            }
+
+            .contenedor .contenido .formulario form .secciones input {
+                width: 100%;
+            }
+
+        .contenedor .contenido .formulario form .button {
+            width: 80%;
+        }
+
+.form-control {
+    height: 100%;
+    box-shadow: none;
+    color: #969fa4;
+}
+
+    .form-control:focus {
+        border-color: #5cb85c;
+    }
+
+.form-control, .btn {
+    border-radius: 3px;
+}
+
+.signup-form {
+    width: 100%;
+    /*padding: 15px;*/
+}
+
+    .signup-form h2 {
+        color: #636363;
+        margin: 0 0 15px;
+        position: relative;
+        text-align: center;
+    }
+
+        /*.signup-form h2:before, .signup-form h2:after {
+            content: "";
+            height: 2px;
+            width: 30%;
+            background: #d4d4d4;
+            position: absolute;
+            top: 50%;
+            z-index: 2;
+        }*/
+
+        .signup-form h2:before {
+            left: 0;
+        }
+
+        .signup-form h2:after {
+            right: 0;
+        }
+
+    .signup-form .hint-text {
+        color: #999;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .signup-form form {
+        color: #333;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        /*background: #fff;*/
+        /*box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);*/
+        padding: 0 30px 30px 30px;
+    }
+
+    .signup-form .form-group {
+        margin-bottom: 20px;
+    }
+
+    .signup-form input[type="checkbox"] {
+        margin-top: 3px;
+    }
+
+    .signup-form .btn {
+        font-size: 16px;
+        font-weight: bold;
+        min-width: 140px;
+        background: #ECD472;
+        color: #fff;
+        outline: none !important;
+    }
+
+        .signup-form .btn:hover {
+            background: #E0C863;
+        }
+
+    .signup-form .row div:first-child {
+        padding-right: 10px;
+    }
+
+    .signup-form .row div:last-child {
+        padding-left: 10px;
+    }
+
+    .signup-form a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+        .signup-form a:hover {
+            text-decoration: none;
+        }
+
+    .signup-form form a {
+        color: #5cb85c;
+        text-decoration: none;
+    }
+
+        .signup-form form a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /******************AASOFTWARE*****************/
+
+
+.contenedor .header1 .logo img{
+ width: 100%;
+}
+
+.contenedor .contenido .formulario form{
+        width: 80%;
+        margin: 10px auto;
+}
+
+.contenedor .contenido {
+    height: auto;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+body {
+    
+    font-family: cuyabra;
+    background-image: url(../img/ENTRADA.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+    .errorCorreo{
+        color: red;
+    }
+    .cont-formu{
+
+    }
+    .signup-form form input{
+        border: 1px solid #ECD472;
+    }
+    .signup-form form .checkbox-inline{
+        color: #969fa4;
+    }
+    .form-group select{
+        background: #ECD472;
+        color: #fff;
+        border: 1px solid #ECD472;
+    }
+    .header1 .logo{
+
+    }
+    label.container{
+            width: 85%;
+    }

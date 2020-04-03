@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EncuestaV2.Data.PreguntaRespuestas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="fa fa-plus">
+    @Html.ActionLink("Crear nueva respuesta", "Create")
+</h2>
+<table id="employeeTable" class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Texto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Activo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preguntas.Texto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Texto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preguntas.Texto)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdPreguntaRespuesta }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.IdPreguntaRespuesta }) |*@
+                    @*@Html.ActionLink("Eliminar", "Delete", new { id = item.IdPreguntaRespuesta })*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

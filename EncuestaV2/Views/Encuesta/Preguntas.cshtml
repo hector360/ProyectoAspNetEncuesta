@@ -1,0 +1,474 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+@*@RenderPage("~/Views/Shared/_Security.cshtml")*@
+<html lang="es-es" itemscope itemtype="http://schema.org/WebPage">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sales Trained</title>
+    <meta content="" name="aasoftware.com" />
+    <meta content="" name="Alberto Wong" />
+
+
+
+    <meta property="og:image" content="" />
+    <meta property="og:description" content=" />
+
+    <link rel="stylesheet" href="~/Content/Preguntas/Style.css?time=@DateTime.Now" />
+    <link rel="stylesheet" href="~/Content/Preguntas/tema.css?time=@DateTime.Now" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Preguntas/Preguntas.css?time=@DateTime.Now">
+    <script src="~/Scripts/Main.js?time=@DateTime.Now"></script>
+    <script src="~/Scripts/PopUps.js?time=@DateTime.Now"></script>
+    <script src="~/Scripts/PopUps4.js?time=@DateTime.Now"></script>
+    <script src="~/Scripts/PopUps2.js?time=@DateTime.Now"></script>
+    <script src="~/Scripts/Preguntas2.js?time=@DateTime.Now"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+        var Encuesta = {};
+        Encuesta.Main = new Main();
+        Encuesta.Preguntas2 = new Preguntas2(true);
+        Encuesta.PopUps = new PopUps();
+        Encuesta.PopUps2 = new PopUps2();
+        Encuesta.PopUps4 = new PopUps4();
+        //Encuesta.Preguntas2.GetPreguntas();
+        //Encuesta.Preguntas2.moverDerecha(0);
+        //Encuesta.Preguntas2.tiempo();
+    </script>
+    <style>
+        body {
+            /*background: #fff;*/
+            font-family: cuyabra;
+        }
+
+        .logo4 {
+            width: 100%;
+            /*background: rgba(255,255,255,0.5);*/
+            background: #fff;
+        }
+
+        .subLogo {
+            width: 40%;
+            margin: 0 auto;
+        }
+
+            .subLogo img {
+                width: 100%;
+                height: auto;
+                padding: 15px;
+            }
+
+        .tPreg {
+            /*margin-top: 40px;*/
+            width: 100%;
+            height: 50%;
+            /*background: blue;*/
+            text-align: justify;
+        }
+
+            .tPreg .tituloPreg {
+                width: 100%;
+                /*background: red;*/
+                /*color: #fff;*/
+                color: #000;
+                font-size: 20px;
+                font-family: cuyabra-bold;
+                margin: 0 auto;
+                padding-left: 50px;
+                padding-right: 50px;
+                margin-top: 20px;
+                overflow-wrap: break-word;
+            }
+
+        .contP {
+            /*background: green;*/
+            width: 100%;
+            height: 150px;
+            overflow: auto;
+            padding-left: 80px;
+            margin-top: 30px;
+            color: #333;
+        }
+
+            /* width */
+            .contP::-webkit-scrollbar {
+                width: 20px;
+            }
+
+            /* Track */
+            .contP::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px grey;
+                border-radius: 10px;
+            }
+
+            /* Handle */
+            .contP::-webkit-scrollbar-thumb {
+                background: #22251A;
+                border-radius: 10px;
+            }
+
+                /* Handle on hover */
+                .contP::-webkit-scrollbar-thumb:hover {
+                    background: #b30000;
+                }
+
+            .contP .botonRe {
+                font-size: 11px;
+                padding: 0;
+                margin: 0;
+            }
+
+        div.miDiv2 {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            /*background: red;*/
+            /*overflow: hidden;*/
+            word-wrap: break-word;
+        }
+
+        .footer-legal {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+            .footer-legal img {
+                width: 100%;
+                /*height: 200px;*/
+            }
+
+        .cabezera {
+            background: #fff;
+        }
+
+        .colorB {
+            background: #E7D175;
+            color: #fff;
+        }
+
+        .colorUno {
+            color: green;
+        }
+
+        .colordos {
+            color: blue;
+        }
+
+        .colortres {
+            color: orange;
+        }
+
+        .colorcuatro {
+            color: red;
+        }
+
+        .md3 {
+        }
+
+        .contenedorDeResp {
+            /*background: red;*/
+            width: 200px;
+            font-size: 12px;
+            float: left;
+            padding: 10px;
+            margin: 10px 40px;
+            border: 1px solid #ccc;
+        }
+
+        .cimage {
+            width: 60%;
+            margin-left: 80px;
+        }
+
+        .impop {
+            width: 100%;
+            margin-left: 48px;
+        }
+
+        .container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: cuyabra;
+            font-weight: normal;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #000;
+            text-align: left;
+        }
+
+            /* Hide the browser's default radio button */
+            .container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+        .checkmark {
+            position: absolute;
+            top: 4px;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .container:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the radio button is checked, add a blue background */
+        .container input:checked ~ .checkmark {
+            background-color: #E2CB6F;
+        }
+
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the indicator (dot/circle) when checked */
+        .container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the indicator (dot/circle) */
+        .container .checkmark:after {
+            top: 5px;
+            left: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        body {
+            background: #fff;
+               background-image: url(../../Content/img/ENTRADA.png);
+            background-position: center center;
+
+            background-repeat: no-repeat;
+
+            background-attachment: fixed;
+
+            background-size: cover;
+
+
+
+        }
+
+        .contInstruc {
+            color: #525252;
+        }
+
+        .certeza1 {
+            position: absolute;
+            bottom: 2px;
+            left: 200px;
+        }
+        .colorBarra{
+            background: #ECD472;
+            color: #ECD472;
+        }
+        .modal-footer{
+            border-top:1px solid #E7D175 ;
+        }
+    </style>
+</head>
+<body onKeyDown="return Encuesta.Preguntas2.Verificar(event)">
+
+
+    <div id="header">
+        <div class="container">
+            <div class="logo4">
+                <div class="subLogo">
+                    <img src="~/Content/img/15.png" />
+                </div>
+
+            </div>
+            <a href="/" class="logo-touch"></a>
+
+
+
+
+            <div class="title-bar">
+                
+                <div> <span class="hidden-xxs"></span> <em></em><span class="fa fa-clock"></span><span id="timer" class="timerC colorUno">90:00</span><div class="certeza" ></div></div>
+
+                <div class="menu-q-expanation over-expanation"></div>
+            </div>
+
+            <div class="right-holder visible-xxs-block">
+
+
+                @*<div class="banner-right">
+
+                    <a href="#/">
+                        <span>
+                            <span class="hidden-xs">
+                                Web oficial <br />de Sperto Trainning
+                            </span>
+                        </span>
+                    </a>
+                </div>*@
+
+
+                <div class="brand-new-share-outer">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="popup-info"></div>
+        <!--Inicio contenedor preguntas respuestas-->
+
+        <div class="questions-container gender-male" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+
+            <div></div>
+
+            <div id="izquierdaF" class="icon-fontello-angle-left" onclick="Encuesta.Preguntas2.checarActivo2();"></div>
+            <div id="izquierdaD" class="icon-fontello-angle-right" onclick="Encuesta.Preguntas2.checarActivo3();"></div>
+            <div class="algo">
+                <div class="questions" ></div>
+                <div class="buttons btn-group center-block"></div>
+            </div>
+            <div class="pos-abs">
+                <div class="buttons-expanation over-expanation" style="opacity: 1;"></div>
+            </div>
+
+
+        </div>
+        <div id="test-progress" class="">
+            <div class="progress-expanation over-expanation" style="opacity: 1;"></div>
+            <p class="text-center">—DESARROLLO DEL TEST—</p>
+            <div class="progress">
+                <div id="barraProgress" class="progress-bar active colorBarra"></div>
+            </div>
+        </div>
+
+        <!--Fin contenedor preguntas respuestas-->
+
+
+
+
+        <div id="welcome_overlay" class="modal bs-modal-center gender-male" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                        <div class="oca-intro-text">
+
+                            Hola<span class="overlay-emphasis blue-text"> <span class="insert_name">Alberto</span></span>,
+
+                            y <span class="overlay-emphasis">bienvenidos</span> al Análisis de Capacidad Oxford<br /><span class="inside">Por favor lee estas instrucciones simples y rápidas para que sepas que hacer:</span>
+
+
+                        </div>
+
+                        <div class="inside">
+                            <ul>
+
+                                <li><span class="overlay-emphasis blue-text">Asegúrate de que entiendes y contestas cada pregunta:</span> Debes completar el test para conseguir tus resultados
+                                <li><span class="overlay-emphasis blue-text">No permanezcas demasiado tiempo en una pregunta.</span> Respóndela tan pronto como la entiendas, y pasa a la siguiente pregunta.
+                                <li><span class="overlay-emphasis blue-text">Contesta lo que para ti es la respuesta  correcta ahora.</span>
+
+                            </ul>
+                        </div>
+
+                        <div class="text-center">
+
+                            <p>
+                                <strong>
+                                    ¿Preparado para averiguar más sobre tí mismo?
+                                </strong>
+                            </p>
+
+                            <button type="button" class="btn btn-primary btn-lg mt1 mb1 start-oca-for-real" data-dismiss="modal">EMPIEZA EL TEST</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="footer">
+            <input type="hidden" id="IdUsuaro" value="@ViewBag.IdUsuaro" />
+            <input type="hidden" id="IdEncuesta" value="@ViewBag.IdEncuesta" />
+            <div class="footer-legal">
+                @*© 2019 AaSoftware.  Todos los derechos reservados.*@
+                @*<img src="~/Content/img/ALLEN.png" />*@
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+
+
+        $('.questions').css('transform', 'translateX(-600%)');
+        $('[dta-q="7"]').removeClass('oculto');
+        $('[dta-q="6"]').removeClass('activo').addClass('oculto');
+        
+        $(function () {
+            Encuesta.Preguntas2.Instrucciones();
+           
+            Encuesta.Preguntas2.moverDerecha(0);
+            //Encuesta.Preguntas2.tiempo();
+            //Encuesta.Preguntas2.verificar();
+            //$(window).bind('beforeunload', function (e) {
+            //    return "Unloading this page may lose data. What do you want to do...";
+            //    e.preventDefault();
+            //    //Encuesta.PopUps.PopUpGeneral({});
+
+
+            //});
+        });
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

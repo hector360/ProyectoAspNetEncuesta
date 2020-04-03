@@ -1,0 +1,135 @@
+﻿
+@{
+    Layout = null;
+}
+<style>
+    body {
+    
+    font-family: cuyabra;
+    background-image: url(../../Content/img/ENTRADA.png)!important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+    .Gold {
+        color: #C9AA5D;
+        text-shadow: 1px 1px 1px #c38418;
+    }
+
+    .contenedor-resp {
+        width: 70%;
+        margin: 0 auto;
+            background-image: url(../img/ENTRADA.png);
+    }
+
+    .cont-imgR {
+        width: 100%;
+        /*background: #fff;*/
+    }
+
+        .cont-imgR .imgR {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+            .cont-imgR .imgR img {
+                width: 100%;
+                padding: 15px;
+            }
+
+    caption {
+        padding-bottom: 15px;
+        font-family: 'Verdana';
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    table {
+        font-family: 'Verdana';
+        font-size: 12pt;
+        border-collapse: collapse;
+        border: 1px solid #EBEBEB;
+        margin: 10px auto;
+        text-align: center;
+        width: 100%;
+    }
+
+        table tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #FCF9F9;
+        }
+
+    th {
+        font-weight: 600;
+        padding: 10px;
+    }
+
+    #container3 {
+        height: 400px;
+        min-width: 310px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+</style>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="~/Scripts/Respuesta.js?time=@DateTime.Now"></script>
+<script>
+    var Encuesta = {};
+    Encuesta.Respuesta = new Respuesta();
+</script>
+
+<input type="hidden" id="IdUsuario" value="@ViewBag.IdUsuario" />
+<input type="hidden" id="IdEncuesta" value="@ViewBag.IdEncuesta" />
+<div class="contenedor-resp">
+    <div class="titulo">
+        <div class="cont-imgR">
+            <div class="imgR">
+                <img src="~/Content/img/15.png" />
+            </div>
+
+        </div>
+        <h2>Felicidades has terminado la encuesta!!</h2>
+    </div>
+    <div class="cont-graficas">
+        <div class="grafica1">
+
+
+            <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+        </div>
+        <div class="grafica2">
+
+
+            @*<div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>*@
+        </div>
+        <div class="grafica3">
+            @*<div id="container3" style="height: 400px"></div>*@
+        </div>
+
+        <div id="respuestas">
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://underscorejs.org/underscore-min.js"></script>
+
+<script>
+    $(function () {
+
+        Encuesta.Respuesta.GetRespuestas();
+        Encuesta.Respuesta.mostrarGrafica();
+    });
+
+</script>

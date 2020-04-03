@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard Sperto</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <meta content="" name="aasoftware.com" />
+    <meta content="" name="Alberto Wong" />
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="../../vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    @*<link rel="stylesheet" href="../../css/fontastic.css">*@
+    <!-- Google fonts - Roboto -->
+    @*<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">*@
+    <!-- jQuery Circle-->
+    @*<link rel="stylesheet" href="../../css/grasp_mobile_progress_circle-1.0.0.min.css">*@
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="../../vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="../../css/style.default.css?time=@DateTime.Now" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="../../css/custom.css?time=@DateTime.Now">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    @*@Styles.Render("~/Content/DataTables/css/estilosFont.css")*@
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+   
+    <div class="">
+
+        @RenderBody()
+
+        <footer class="main-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        @*<p>AASOFTWARE 2019</p>*@
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <p>Desarrollado por <a href="http://www.aasoftware.mx/" class="external">AASoftware</a></p>
+                       
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- JavaScript files-->
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    @*<script src="../../vendor/popper.js/umd/popper.min.js"></script>*@
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    @*<script src="../../js/grasp_mobile_progress_circle-1.0.0.min.js"></script>*@
+    <script src="../../vendor/jquery.cookie/jquery.cookie.js"></script>
+    @*<script src="../../vendor/chart.js/Chart.min.js"></script>*@
+    @*<script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>*@
+    @*<script src="../../vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>*@
+    @*<script src="../../js/charts-home.js"></script>*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <!-- Main File-->
+    @*<script src="js/front.js"></script>*@
+
+    <script>
+        $(document).ready(function () {
+            $("#employeeTable").DataTable({
+                language: {
+                    processing: "Procesando datos...",
+                    search: "Buscar:",
+                    lengthMenu: "",
+                    info: "Mostrando Entradas",
+                    infoEmpty: "Información Vacia",
+                    infoFiltered: "(Filtrando de MAX elementos en total)",
+                    infoPostFix: "",
+                    loadingRecords: "Cargando Tablas...",
+                    zeroRecords: "No se Encontraron Elementos ",
+                    emptyTable: "Tabla vacia",
+                    paginate: {
+                        first: "Primero",
+                        previous: "Anterior",
+                        next: "Siguiente",
+                        last: "Ultimo"
+                    }
+                }
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>

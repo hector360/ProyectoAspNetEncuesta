@@ -1,0 +1,224 @@
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides2 {display: none}
+img {vertical-align: middle;}
+
+.contenedor{
+  width: 80%;
+  margin: 0 auto;
+}
+.header{
+  width: 100%;
+ background: #c9aa5d;
+  border-bottom: 2px solid #ccc;
+}
+.header .imagen img{
+  width: 10%;
+  margin: 15px
+}
+.header .slogan p{
+  color: #000;
+  padding-left: 15px;
+}
+.header .slogan p span{
+  color: blue;
+}
+.panel{
+  width: 100%;
+}
+
+/* Slideshow container */
+.slideshow-container2 {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  width: auto;
+  padding: 16px;
+  color: #ccc;
+  font-weight: lighter;
+  font-size: 80px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  color: #000;
+}
+
+/* Caption text */
+.text {
+  margin: 15px 0;
+  padding: 80px 12px;
+  width: 100%;
+  text-align: center;
+  font-size: 54px;
+}
+.text p{
+  color: #000;
+  font-size: 20px;
+}
+.text p span{
+  color: blue;
+  font-size: 28px;
+}
+.w-100 {
+  width: 100%;
+  border: 1px solid #c9aa5d;
+  color: #c9aa5d;
+  background: #fff;
+}
+.w-100:hover {
+  width: 100%;
+  border: 1px solid #c9aa5d;
+  color: #fff;
+  background: #c9aa5d;
+}
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.botones{
+  margin: 0 auto;
+  width: 70%;
+}
+
+label{
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+label input{
+  display: none;
+}
+label span{
+  position: relative;
+  display: inline-block;
+  margin: 20px 10px;
+  
+  width: 100px;
+  background: #fff;
+  border: 2px solid #008eff;
+  color: #008eff;
+  border-radius: 4px;
+  text-align: center;
+  padding: 10px 90px;
+}
+label input:checked ~ span{
+  color: #fff;
+  border: 1px solid #008eff;
+  background: #008eff;
+}
+
+
+
+
+.bar_container{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+.Cb1{
+  padding-left: 0;
+}
+.Cb2{
+  padding-right: 0;
+}
+@media only screen and (max-width: 576px) {
+  
+  .Cb1{
+    padding-left: 5px;
+    margin: 10px 0 0 10px;
+  }
+  .Cb2{
+    
+    margin: 10px 15px 0 0;
+  }
+  .prev{
+    cursor: pointer;
+    position: absolute;
+    top: 10%;
+    width: auto;
+    padding: 16px;
+    color: #ccc;
+    font-weight: lighter;
+    font-size: 80px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  .text p{
+    color: #000;
+    font-size: 20px;
+    padding-left: 45px;
+    width: 300px
+  }
+  .text p span{
+    color: blue;
+    font-size: 28px;
+  }
+
+}

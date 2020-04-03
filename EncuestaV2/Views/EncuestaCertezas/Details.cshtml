@@ -1,0 +1,35 @@
+﻿@model EncuestaV2.Data.EncuestaCertezas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EncuestaCertezas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Certezas.AreaConocimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certezas.AreaConocimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EncuestaTipo.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EncuestaTipo.Nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdEncuestaCertezas }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,262 @@
+﻿@model EncuestaV2.Data.Certezas
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .cont-selector select{
+        /*background: red;*/
+        width: 100%;
+        border: 1px solid #C9AA5D;
+        padding: 8px;
+    }
+    .cont-selector2 select{
+        /*background: red;*/
+        width: 50%;
+        border: 1px solid #C9AA5D;
+        padding: 8px;
+    }
+</style>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Certezas Comerciales</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group row">
+            @*@Html.LabelFor(model => model.AreaConocimiento, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Área de conocimiento</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AreaConocimiento, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                @Html.ValidationMessageFor(model => model.AreaConocimiento, "", new { @class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Descripción</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @{
+            List<SelectListItem> listItems= new List<SelectListItem>();
+            int num = 100;
+            listItems.Add(new SelectListItem
+            {
+                Text = "" + 1,
+                Value = "" + 1,
+                Selected = true
+            });
+            for (int i = 2; i <= num; i++)
+            {
+                listItems.Add(new SelectListItem
+                {
+                    Text = "" + i,
+                    Value = "" + i
+                });
+            }
+        }
+
+        @{
+            List<SelectListItem> listItemsFactor= new List<SelectListItem>();
+            listItemsFactor.Add(new SelectListItem
+            {
+                Text = "Puntos",
+                Value = "Puntos",
+                Selected = true
+            });
+
+        }
+
+        @*@Html.DropDownListFor(model => model.Reactivos, listItems, "Reactivos")*@
+
+        <div class="form-group row">
+            @Html.LabelFor(model => model.Reactivos, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="cont-selector">
+                    @Html.DropDownListFor(model => model.Reactivos, listItems, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+        </div>
+
+        @*<div class="form-group row">
+            <label class="control-label col-md-2">Valor total</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ValorTotal, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                @Html.ValidationMessageFor(model => model.ValorTotal, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Valor unitario</label>
+            <div class="col-md-10">
+                <div class="cont-selector">
+                    @Html.DropDownListFor(model => model.ValorUnitario, listItems, new { htmlAttributes = new { @class = "h-75"} })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Nivel 1</label>
+        </div>
+        
+        <div class="form-group row">
+            <label class="control-label col-md-2">Titulo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Titulo" id="Titulo[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Descripcion</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <textarea rows="3" class="form-control  row col-md-8 ml-0" name="DescripcionNivel" id="DescripcionNivel[0]" type="text" required ></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Minimo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Min" id="Min[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Maximo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Max" id="Max[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Nivel 2</label>
+        </div>
+        
+        <div class="form-group row">
+            <label class="control-label col-md-2">Titulo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Titulo" id="Titulo[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Descripcion</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <textarea rows="3" class="form-control  row col-md-8 ml-0" name="DescripcionNivel" id="DescripcionNivel[0]" type="text" required ></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Minimo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Min" id="Min[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Maximo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Max" id="Max[0]" type="text" required />
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label class="control-label col-md-2">Nivel 3</label>
+        </div>
+        
+        <div class="form-group row">
+            <label class="control-label col-md-2">Titulo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Titulo" id="Titulo[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Descripcion</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <textarea rows="3" class="form-control  row col-md-8 ml-0" name="DescripcionNivel" id="DescripcionNivel[0]" type="text" required ></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Minimo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Min" id="Min[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Maximo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Max" id="Max[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Nivel 4</label>
+        </div>
+        
+        <div class="form-group row">
+            <label class="control-label col-md-2">Titulo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Titulo" id="Titulo[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Descripcion</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <textarea rows="3" class="form-control  row col-md-8 ml-0" name="DescripcionNivel" id="DescripcionNivel[0]" type="text" required ></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Minimo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Min" id="Min[0]" type="text" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-2">Maximo</label>
+            <div class="col-md-8 row ml-0 mr-0">
+                <input class="form-control  row col-md-8 ml-0" name="Max" id="Max[0]" type="text" required />
+            </div>
+        </div>
+
+        @*<div class="form-group row">
+            <label class="control-label col-md-2">Factor</label>
+            <div class="col-md-10">
+                <div class="cont-selector2">
+                    <div class="col-xs-12"> @Html.DropDownListFor(model => model.Factor, listItemsFactor, new { htmlAttributes = new { @class = "w-100" } })</div>
+                </div>
+            </div>
+        </div>*@
+
+        @*<div class="form-group row">
+            @Html.LabelFor(model => model.FechaCreacion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FechaCreacion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FechaCreacion, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group row">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                <a href="/certezas"><i class="fa fa-arrow-circle-left"></i>Regresar</a>
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@

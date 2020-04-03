@@ -1,0 +1,111 @@
+﻿@model IEnumerable<EncuestaV2.Models.CertezasView>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1 class="txt-dorado">CERTEZAS</h1>
+@*
+
+        <table id="employeeTable" class="display">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AreaConocimiento)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Reactivos)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Total)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PreguntasRestantes)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ValorTotal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ValorUnitario)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Factor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaCreacion)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AreaConocimiento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Reactivos)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Total)
+                        </td>
+                                        <td>
+                            @Html.DisplayFor(modelItem => item.PreguntasRestantes)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValorTotal)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ValorUnitario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Factor)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaCreacion)
+                        </td>
+                        <td>      @Html.ActionLink("Eliminar", "Delete", new { id = item.IdCerteza })
+                        @Html.ActionLink("Editar", "Edit", new { id = item.IdCerteza }) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.IdCerteza }) |
+
+                    @*</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+<h2 class="fa fa-plus">
+    @Html.ActionLink("Crear nueva Certeza", "Create")
+</h2>
+<div id="accordion">
+
+
+
+</div>
+<script>
+    $(document).ready(function () {
+
+        //DOM manipulation code
+        Survey.Certainty.GetCertaintys();
+
+    });
+</script>
+@section Scripts{
+
+
+
+    @*<div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                    Collapsible Group Item #1
+                </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                <div class="card-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+            </div>
+        </div>*@
+
+}

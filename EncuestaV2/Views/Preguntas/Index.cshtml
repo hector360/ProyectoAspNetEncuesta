@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EncuestaV2.Data.Preguntas>
+
+    @{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+
+    <h1 class="txt-dorado">PREGUNTAS</h1>
+        @*@Html.ActionLink("Crear nueva pregunta", "Create")*@
+        <a class="txt-dorado" href="/Preguntas/Create"><i class="fa fa-plus-circle"></i> Crear nueva pregunta</a>
+    @*<table id="employeeTable" class="display">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Texto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Activo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Certezas.AreaConocimiento)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Texto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Certezas.AreaConocimiento)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IdPregunta }, new { @class = "txt-dorado" }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.IdPregunta }, new { @class = "txt-dorado" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdPregunta }, new { @class = "txt-dorado" })
+                </td>
+            </tr>
+
+
+            }
+        </tbody>
+    </table>*@
+        <div id="accordion">
+
+
+
+        </div>
+        <script>
+    $(document).ready(function () {
+
+        //DOM manipulation code
+        Survey.Certainty.GetCertaintys();
+
+    });
+        </script>

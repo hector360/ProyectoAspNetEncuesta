@@ -1,0 +1,49 @@
+﻿@model EncuestaV2.Data.Preguntas
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<h3>Estas seguro de eliminar esto?</h3>
+<div>
+    <h4>Preguntas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Certezas.AreaConocimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Certezas.AreaConocimiento)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a href="/preguntas"><i class="fa fa-arrow-circle-left"></i>Regresar</a>
+    </div>
+    }
+</div>

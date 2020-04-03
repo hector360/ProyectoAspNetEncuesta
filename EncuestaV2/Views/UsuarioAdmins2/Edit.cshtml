@@ -1,0 +1,40 @@
+﻿@model EncuestaV2.Data.UsuarioAdmin
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>UsuarioAdmin</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IdUsuarioAdmin)
+
+        @Html.HiddenFor(model => model.Nombre)
+
+        @Html.HiddenFor(model => model.Contraseña)
+
+        @Html.HiddenFor(model => model.Correo)
+
+        @Html.HiddenFor(model => model.Activo)
+
+        @Html.HiddenFor(model => model.FechaAlta)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

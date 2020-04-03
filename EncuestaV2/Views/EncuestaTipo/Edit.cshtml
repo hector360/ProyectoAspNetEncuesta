@@ -1,0 +1,269 @@
+﻿@model EncuestaV2.Data.EncuestaTipo
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Editar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>EncuestaTipo</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IdEncuesta)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.FechaCreacion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FechaCreacion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FechaCreacion, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Activo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Activo)
+                    @Html.ValidationMessageFor(model => model.Activo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Descripcion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TiempoActivo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TiempoActivo)
+                    @Html.ValidationMessageFor(model => model.TiempoActivo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tiempo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tiempo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tiempo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.FechaCambio, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FechaCambio, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FechaCambio, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <input type="button" name="selectall" id="selectall" value="Seleccionar Todos" class="btn btn-primary"/>
+        <input type="button" name="selectall" id="deselectall" value="Limpiar Seleccion" class="btn btn-primary"/>
+        <div class="container overflow-hidden ">
+            <ul class="">
+                @{
+                    int pos = 1;
+                    bool check = false;
+                    foreach (var item in ViewBag.Certezas)
+                    {
+                        <li class="list-group-item w-50 float-left">
+                            @item.AreaConocimiento
+                            @foreach (var item2 in ViewBag.EncuestaCertezas)
+                            {
+                                if (@item2.IdCertezas == @item.IdCerteza && item2.IdEncuesta == Model.IdEncuesta)
+                                {
+                                    <label class="switch">
+                                        <input type="checkbox" name="certezas" id="certezas[@item.IdCerteza]" class="success" value="@item.IdCerteza" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                    check = true;
+                                }
+                            }
+
+                            @if (check == false)
+                            {
+                                <label class="switch">
+                                    <input type="checkbox" name="certezas" id="certezas[@item.IdCerteza]" class="success" value="@item.IdCerteza">
+                                    <span class="slider"></span>
+                                </label>
+                            }
+
+                        </li>
+                        pos++;
+                        check = false;
+                    }
+
+                }
+            </ul>
+
+
+
+            @*<input type="text" id="Link" name="Link"    size="20" readonly="readonly">*@
+            @*<a class="btn btn-primary" onclick="GenerateLink();">Generar Link</a>*@
+
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Link, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Link, new { htmlAttributes = new { @class = "form-control", @readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.Link, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+                <div class="form-group">
+            @Html.LabelFor(model => model.Link, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Link2, new { htmlAttributes = new { @class = "form-control", @readonly="readonly" } })
+                @Html.ValidationMessageFor(model => model.Link2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="/EncuestaTipo"><i class="fa fa-arrow-circle-left"></i>Regresar</a>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $("#deselectall").on("click", function () {
+        console.log("sss");
+        $(".success").prop("checked", false);
+    });  
+
+
+    $("#selectall").on("click", function () {
+        console.log("sss");
+        $(".success").prop("checked", true);
+    });  
+
+       
+    
+</script>
+@section scripts{
+    <script>
+
+        var GenerateLink = function () {
+            var params = { url: '/EncuestaTipo/GeneratePassword', type: 'GET', dataType: 'json' };
+            var e = Survey.Main.CargaDatos(params);
+            var result = JSON.parse(e);
+            console.info(result);
+            var str = window.location.origin + "/Encuesta?IdEncuesta="+$('#IdEncuesta').val();
+            result = str + result.pwd;
+            $('#Link').val(result);
+        }
+
+    </script>
+    
+    }
+<style>
+
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        float: right;
+    }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            display: none;
+        }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input.default:checked + .slider {
+        background-color: #444;
+    }
+
+    input.primary:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input.success:checked + .slider {
+        background-color: #8bc34a;
+    }
+
+    input.info:checked + .slider {
+        background-color: #3de0f5;
+    }
+
+    input.warning:checked + .slider {
+        background-color: #FFC107;
+    }
+
+    input.danger:checked + .slider {
+        background-color: #f44336;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+</style>

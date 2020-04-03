@@ -1,0 +1,106 @@
+﻿
+.tituloC .tituloCatalogo {
+    font-size: 30px;
+    width: 100%;
+    border-bottom: 2px solid #339AF0;
+    padding-bottom: 10px;
+}
+
+.botonCrear {
+    margin-bottom: 20px;
+}
+
+.editar {
+    color: white;
+    text-decoration: none;
+    padding: 10px 5px;
+    border: 1px solid #339AF0;
+    background: #339AF0;
+}
+
+    .editar:hover {
+        color: white;
+        text-decoration: none;
+        padding: 10px 5px;
+        border: 1px solid #24AE74;
+        background: #339AF0;
+    }
+
+.borrar {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #CC3648;
+    background: #CC3648;
+}
+
+    .borrar:hover {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        border: 1px solid #CC3648;
+        background: #C13344;
+    }
+
+.crear {
+    font-size: 20px;
+}
+
+.tituloCrear {
+    margin: 20px 550px;
+}
+.form-horizontal{
+    width: 100%;
+}
+.form-horizontal .sombraCaja {
+    -webkit-box-shadow: 3px 4px 4px -1px rgba(107,107,107,1);
+    -moz-box-shadow: 3px 4px 4px -1px rgba(107,107,107,1);
+    box-shadow: 3px 4px 4px -1px rgba(107,107,107,1);
+    overflow: hidden;
+    padding: 30px;
+    margin: 10px 550px;
+    width: 550px;
+}
+
+.sombraCaja2 {
+    -webkit-box-shadow: 3px 4px 4px -1px rgba(107,107,107,1);
+    -moz-box-shadow: 3px 4px 4px -1px rgba(107,107,107,1);
+    box-shadow: 3px 4px 4px -1px rgba(107,107,107,1);
+    overflow: hidden;
+    padding: 30px;
+    width: 700px;
+    margin: 0 300px;
+}
+
+.asss {
+    width: 100%;
+    font-size: 24px;;
+}
+
+.bss {
+    width: 100%;
+}
+
+.boton1 {
+    width: 100%;
+}
+
+
+.sombraCaja2 h3 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #C13344;
+    width: 100%;
+    padding: 0 10px 10px 0;
+}
+
+.navC {
+    background: #339AF0;
+}
+
+.conteBorrar {
+    margin: 10px 300px;
+}
+
+.checkbox1{
+    width: 100%;
+}

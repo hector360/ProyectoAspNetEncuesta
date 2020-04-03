@@ -1,0 +1,1894 @@
+﻿@{
+    Layout = null;
+}
+@*
+
+
+    <!DOCTYPE html>
+    <html lang="es-es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+
+
+        <title> Test de Ventas</title>
+        <meta name="description" content="" />
+
+
+        <link rel="stylesheet" type="text/css" href="~/Content/Registro/Site.css">
+
+        <style>
+
+    .autosprite-sprite {
+        /*background: url(/theme/images/autosprite-sprite.png) no-repeat top left;*/
+    }
+    .autosprite-sprite.control-arrow-left {
+        background-position:0 -0px;
+        width: 25px;
+        height: 44px;
+    }
+    .autosprite-sprite.control-arrow-right {
+        background-position:0 -44px;
+        width: 25px;
+        height: 44px;
+    }
+    .autosprite-sprite.graph-oca {
+        background-position:0 -88px;
+        width: 290px;
+        height: 237px;
+    }
+    .autosprite-sprite.graph-oca-pie {
+        background-position:0 -973px;
+        width: 234px;
+        height: 215px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(da) {
+        background-position:0 -325px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(de) {
+        background-position:0 -540px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(el) {
+        background-position:0 -755px;
+        height: 218px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(es) {
+        background-position:0 -1188px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(es-es) {
+        background-position:0 -1403px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(fr) {
+        background-position:0 -1618px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(fr-ca) {
+        background-position:0 -1833px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(he) {
+        background-position:0 -2048px;
+        height: 218px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(hu) {
+        background-position:0 -2266px;
+        height: 218px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(it) {
+        background-position:0 -2484px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(ja) {
+        background-position:0 -2699px;
+        height: 218px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(nl) {
+        background-position:0 -2917px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(no) {
+        background-position:0 -3132px;
+        height: 218px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(pt) {
+        background-position:0 -3350px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(ru) {
+        background-position:0 -3565px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(sv) {
+        background-position:0 -3780px;
+    }
+    .autosprite-sprite.graph-oca-pie:lang(zh) {
+        background-position:0 -3995px;
+        height: 218px;
+    }
+    .autosprite-sprite.step-01 {
+        background-position:0 -4213px;
+        width: 329px;
+        height: 198px;
+    }
+    .autosprite-sprite.step-02 {
+        background-position:0 -4411px;
+        width: 329px;
+        height: 198px;
+    }
+    .autosprite-sprite.step-03 {
+        background-position:0 -4609px;
+        width: 329px;
+        height: 198px;
+    }
+    .autosprite-sprite.succes-02 {
+        background-position:0 -4807px;
+        width: 173px;
+        height: 129px;
+    }
+    .autosprite-sprite.succes-03 {
+        background-position:0 -4936px;
+        width: 173px;
+        height: 129px;
+    }
+    .autosprite-sprite.succes-04 {
+        background-position:0 -5065px;
+        width: 173px;
+        height: 129px;
+    }
+    .autosprite-sprite.succes-05 {
+        background-position:0 -5194px;
+        width: 173px;
+        height: 129px;
+    }
+
+    .pie-chart-find-out-more a {
+        margin: 10px 0;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .pie-chart-find-out-more a:after {
+        content: '';
+        display: inline-block;
+        border-left: 0.8em solid #369;
+        border-top: 0.4em solid transparent;
+        border-bottom: 0.4em solid transparent;
+        margin-left: 0.5em;
+    }
+    html[dir="rtl"] .pie-chart-find-out-more a:after {
+        border-left: none;
+        border-right: 0.8em solid #369;
+        margin-left: 0;
+        margin-right: 0.5em;
+    }
+
+    .top-alert {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+
+    .test-main li,
+    .test-main p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    h4 {
+        font-size: 20px;
+        color: #006ea3;
+        font-weight: bold;
+        /*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUCAIAAAA2kktGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPJJREFUeNpiOHz35Z+///7jBUzLzj7wmbX/y88/DLgBExDvuP7MasKOR++/4lMEBJeffTDv23Hq4Vt8ioDgxafvDpN3rbnwCJ8iIPj++2/o/EMde67iUwQBlZvPJy47/uvvP3yKgGDBybtu0/a++/YLnyIgOHjnpXnv9jtvPuNTBARAFUB1QNX4FMEBCx45FRHe7ZlOQBKnInsV8XXJ9kJcbDhNSjBXnhluzsbMhNO6dl/DChdtnG7iZGVeFGMdYiCH0+ESfJwbUxzM5IVx+k5XSmBLmqOcIDfOIHBVlwR6hIcdd3Dsvfn855+/+JMvQIABABRekxEYBXccAAAAAElFTkSuQmCC) no-repeat left 2px;*/
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+    /*[dir="rtl"] h4 {
+        background: url("https://files.ondemandhosting.info/imagecache/cropfit/data/www.curiousaboutyourself.org/files/sprite/arrow-rtl_es_ES.png?_=ddcGknKu") no-repeat right 2px;
+    }*/
+
+    .step-color {
+        color: #808183;
+        font-size: 18px;
+    }
+    :lang(el) .step-color {
+        font-size: 17px;
+    }
+
+    .steps-box {
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    @@media (max-width: 991px) {
+        .steps-box img {
+            margin: 20px auto 10px;
+            display: block;
+        }
+    }
+
+    .row img {
+        max-width: 100%;
+    }
+
+    .test-main hr {
+        border-top: 1px solid #ddd;
+    }
+
+    .oca-realyou {
+        padding: 15px 45px;
+        color: #fff;
+        background-size: cover;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .oca-realyou h2 {
+        color: #fff;
+    }
+
+    .oca-realyou li {
+        margin-top: 10px;
+    }
+
+    .succes h5 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    @@media (min-width: 768px) {
+        .succes .col-xs-3 {
+            float: left;
+        }
+    }
+
+    .sprite-fit-in {
+        width: 100% !important;
+        height: 0 !important;
+        image-rendering: -moz-crisp-edges;
+        image-rendering:   -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+
+
+
+    @@media (max-width: 768px) {
+        .sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-graph-oca03-es-ES-jpg,
+        .sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-step-03-jpg,
+        .sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-step-02-min-80-jpg,
+        .sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-step-01a-min-80-jpg {
+            width: 329px !important;
+            height: 198px !important;
+            padding-bottom: 0 !important;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            max-width: 100%;
+        }
+
+        .sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-graph-oca03-es-ES-jpg {
+            width: 699px !important;
+            height: 570px !important;
+            margin-bottom: 20px;
+        }
+
+        .succes .col-xs-3 {
+            width: 173px !important;
+
+            padding-bottom: 0 !important;
+            padding-right: 20px !important;
+        }
+
+        .sticky-holder > .visible-sm-block > h2.mb0 {
+            margin-top: 10px;
+        }
+
+    }
+
+    @@media (max-width: 767px) {
+        .container {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .oca-realyou,
+        .title-bar {
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+
+        .oca-img.pl2 {
+            padding-left: 15px !important;
+        }
+
+    }
+
+    @@media (max-width: 699px) {
+        .sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-graph-oca03-es-ES-jpg {
+            width: 100% !important;
+            height: 0 !important;
+            padding-bottom: 81.54% !important;
+            margin-bottom: 20px;
+        }
+    }
+
+    @@media (max-width: 450px) {
+        .pie-chart-find-out-more .pull-right,
+        .pie-chart-find-out-more {
+            float: none !important;
+        }
+        .pie-chart-find-out-more .pull-right {
+            padding-left: 54px;
+        }
+        .pie-chart-find-out-more {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .succes h5 {
+            font-size: 14px;
+        }
+        .succes .col-xs-3 {
+            width: 150px !important;
+            padding-bottom: 0 !important;
+            padding-right: 10px !important;
+        }
+        .steps-box {
+            margin-bottom: 20px;
+        }
+    }
+
+
+        </style>
+
+
+        <style>
+
+    #legal_disclaimer h4 {
+        background: none;
+        padding-left: 0;
+        margin-bottom: 20px;
+    }
+
+    #legal_disclaimer br {
+        display: none;
+    }
+
+    #legal_disclaimer li,
+    #legal_disclaimer p {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    #legal_disclaimer .modal-content {
+        max-height: 80vh;
+        overflow: auto;
+    }
+
+    #oca_start_form label.required {
+        position: relative;
+    }
+
+    #oca_start_form label.required:after {
+        position: absolute;
+        font-size: 85%;
+        content: '*';
+        padding: 0 0.25em;
+        color: #a00;
+    }
+
+    #oca_start_form label[for="age"] {
+        padding-right: 0;
+    }
+
+    @@media (min-width: 769px) and (max-width: 1024px) {
+        #oca_form {
+            position: sticky !important;
+            position: -webkit-sticky !important;
+        }
+        .sticky-holder {
+            height: 200vh;
+        }
+    }
+
+    @@media (max-width: 991px) {
+        .sticky-holder {
+            height: auto !important;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .sticky-holder {
+            padding-left: 15px !important;
+        }
+    }
+
+    .affix-bottom {
+        position: relative;
+    }
+
+    .gender-half-left {
+        padding-right: 5px;
+    }
+
+    .gender-half-right {
+        padding-left: 5px;
+    }
+
+    @@media (max-width: 768px) {
+
+        button.btn {
+            background: transparent;
+            border-radius: 6px !important;
+            border: 2px solid #4876a3;
+            font-weight: bold;
+            font-family: Arial, verdana;
+            color: #4876a3;
+            margin-top: 20px;
+        }
+        .oca-realyou {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .oca-realyou ul {
+            padding-left: 20px;
+        }
+    }
+
+    label[for="zipcode"] {
+        margin-top: -0.1em;
+        line-height: 1.2;
+    }
+
+    label[for="phone"] {
+        margin-top: -0.1em;
+        line-height: 1.2;
+    }
+
+    .phone-hint {
+        position: absolute;
+        right: -18px;
+        top: 0px;
+        color: #4876a3;
+    }
+
+    @@media (min-width: 768px) {
+        .phone-hint {
+            right: -8px;
+            top: 3px;
+        }
+    }
+
+    .phone-hint + .tooltip.top {
+        width: 200px;
+    }
+
+        </style>
+
+
+    </head>
+    <body>
+
+
+
+        <div id="header">
+            <div class="container">
+                <div class="logo"></div>
+                <a href="/" class="logo-touch"></a>
+
+                <div class="right-holder hidden-xxs">
+
+
+
+
+                </div>
+
+                <div class="title-bar">
+                    <h1>TEST DE VENTAS <span class="hidden-xxs">|</span> <em>TIPO DE TEST</em></h1>
+                    <a href="#" class="menu-q">
+                        <span class="pulse"></span>
+                    </a>
+                    <div class="menu-q-expanation over-expanation"></div>
+                </div>
+
+                <div class="right-holder visible-xxs-block">
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container">
+
+
+
+
+
+            <div id="error_message_holder"></div>
+
+
+
+
+
+
+
+
+            <link rel="stylesheet" href="https://files.ondemandhosting.info/sprite/vp,H4sIAAAAAAAC_7TQ0QnCQAyA4Yl6qVZB8NkJHKDEmF4jrTmSO4rbS1-cIC7wwf-DrJiZkGYGMi2TVHhiRdi2LVEz0eb40FY_2sx5mZJahkkWdvBiUhmyYZk7JRzZx9s9vUq-BrBeuXT9AdMq73TpY9njX9Qhivst7YfgqY2Ife8PBodo8BQNnnfwGwAA__-geNME7wIAAA==.css?_=ddcGknKu&amp;c=GfsosC" />
+
+            <div class="row test-main">
+
+                <div class="row mr0 ml0">
+
+                    <div class="col-md-4 col-md-push-8 pl3 sticky-holder flip">
+
+                        <div class="visible-xs-block visible-sm-block">
+                            <h2 class="mb0">HAZ EL MÁS PRECISO </br>Y FIABLE</h2>
+                            <h2 class="mt0"><strong>TEST DE PERSONALIDAD</strong></h2>
+                            <div class="pull-right flip pie-chart-find-out-more ml3 mr3">
+                                <div style="width: 234px; height: 215px; background-size: 159.95%;" class="sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-graph-oca-es-ES-jpg mb1"></div>
+
+
+                                <a href="#oca_start_form_marker" class="pull-right flip">Empieza tu test</a>
+
+                            </div>
+                            <p>Tu coeficiente de inteligencia, personalidad y aptitud determinan tu éxito y felicidad futuros. Millones de personas se han beneficiado del Análisis de Capacidad Oxford desde 1960.  Este es el único test de este tipo que proporciona un análisis exacto y medible que además se entrega de forma personalizada e incluye recomendaciones prácticas adecuadas a tus necesidades, basadas en tus resultados.</p>
+                            <p>Eres una persona única con tus propios rasgos de personalidad; algunos de estos rasgos  te posibilitan lograr magníficas cosas en la vida, y otras puede que parezcan restringirte y finalmente suprimir tu verdadero potencial.</p>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <a name="oca_start_form_marker"></a>
+
+
+
+                        <div class="oca-form" id="oca_form">
+                            <div class="oca-form-line"></div>
+
+
+                            <div class="oca-form-privacy-note-label pull-right flip">
+                                <div class="oca-form-privacy-note">Información de Privacidad <span class="glyphicon glyphicon-info-sign"></span></div>
+                                <div class="oca-form-privacy-tooltip">Tu información será usada únicamente para administrar este test de personalidad y su evaluación. También tienes la opción de recibir más información sobre Scientology. Tu información nunca será vendida ni dada a terceros de ninguna forma. Si en algún momento ya no deseas recibir nuestros e-mails, simplemente usa el link proporcionado en la parte inferior del mensaje. Revisa nuestra <a target="_blank" href="/privacy-notice.html">Política de Privacidad</a> para más detalles.</div>
+                            </div>
+
+
+                            <form id="oca_start_form" method="POST" action="/start.action">
+
+
+
+                                <div class="form-group">
+                                    <label for="fname" class="required">Nombre</label>
+                                    <input type="text" class="form-control" id="fname" name="fname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lname" class="required">Apellido</label>
+                                    <input type="text" class="form-control" id="lname" name="lname" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="required">Dirección de E-mail</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="form-group row mt2">
+                                    <label for="age" class="col-sm-3 col-md-4 col-lg-3 control-label required" style="margin-top: 0.4em;">Edad</label>
+                                    <div class="col-sm-9 col-md-8 col-lg-9">
+                                        <input type="number" class="form-control" id="age" name="age" min="18" max="140" oninvalid="setCustomValidity('El OCA Online no es para menores de 18 años ')" onkeyup="try{setCustomValidity('')}catch(e){}" required>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label class=" control-label required pr0" style="margin-top: 0.4em;">Género</label>
+                                    <div class="">
+                                        <div class="row">
+                                            <div class="col-xs-6 gender-half-left">
+                                                <label class="gender-checkbox">
+                                                    <input type="radio" name="gender" value="male" required> Hombre
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 gender-half-right">
+                                                <label class="gender-checkbox">
+                                                    <input type="radio" name="gender" value="female" required> Mujer
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group row">
+                                    <label for="country" class="col-sm-3 col-md-4 col-lg-3 control-label required pr0" style="margin-top: 0.4em;">País</label>
+                                    <div class="col-sm-9 col-md-8 col-lg-9">
+                                        <select class="form-control" id="country" name="country" required>
+                                            <option></option>
+                                        </select>
+                                        <input type="hidden" id="countryname" name="countryname">
+                                    </div>
+                                </div>
+                                <div class="form-group row mt2">
+                                    <label for="zipcode" class="col-sm-3 col-md-4 col-lg-3 control-label required pr0">Código postal</label>
+                                    <div class="col-sm-9 col-md-8 col-lg-9 zipcode-input">
+                                        <input type="text" class="form-control" id="zipcode" name="zipcode">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="phone" class="col-sm-3 col-md-4 col-lg-3 control-label pr0">
+                                        Número de teléfono
+
+                                    </label>
+                                    <div class="col-sm-9 col-md-8 col-lg-9">
+                                        <input type="tel" class="form-control phone-input" id="phone" name="phone">
+                                    </div>
+                                </div>
+
+                                <div class="hidden-xs">
+                                    <button type="submit" class="btn btn-lg btn-primary btn-oca-submit btn-squiggly">EMPIEZA EL TEST</button>
+                                </div>
+                                <div class="visible-xs-block">
+                                    <button type="submit" class="btn btn-lg btn btn-squiggly btn-oca-submit">EMPIEZA EL TEST</button>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+
+                        <div id="legal_disclaimer" class="modal bs-modal-center" tabindex="-1" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content pl1 pr1 pt1">
+
+                                    <div class="modal-header">
+
+                                        <h4 class="modal-title">Por favor desplaza hacia abajo y lee este documento.  Marca el recuadro "Estoy de Acuerdo" y haz clic al botón para aceptar.</h4>
+                                    </div>
+
+                                    <div class="modal-body pb3">
+
+                                        <span class="legal-body">
+                                            <div class="legal-special">
+                                                <h4 align="center">Iglesia de Scientology de Europa</h4>
+                                                <br />
+                                                <br />
+                                                <p>Quiero participar en el test de personalidad conocido a nivel mundial como el test OCA de la Iglesia de Scientology, a la que pertenece la Iglesia de Scientology de Europa.</p>
+                                                <br />
+                                                <p>He leido la información sobre el "Test de Análisis de Capacidad Oxford (OCA) en la página web, y entiendo totalmente la naturaleza, el significado y la importancia de este test.  Me doy cuenta de que el test no es un examen médico o psicológico, sino una herramienta especial de la Iglesia de Scientology, en relación con las enseñanzas espirituales de su fundador, L. Ronald Hubbard.  También he leído y entiendo esta declaración.  Después de haber reflexionado sobre ello, he decidido libremente sobre mi solicitud de hacer el test.</p>
+                                                <br />
+                                                <h4>Protección de datos:</h4>
+                                                <br />
+                                                <p>Das tu consentimiento para que tu nombre, datos de contacto, fecha del test, las respuestas que das al hacer el test, y los resultados de este test, llevado a cabo en papel y en soporte electrónico por la Iglesia de Scientology de Europa con el fin de evaluar el test, de modo que a partir de entonces puedas recibir la guía espiritual por parte de los miembros de la Iglesia local de Scientology en tu área.  La información que se te pide proporcionar es necesaria para llevar a cabo este test y su evaluación y guía.  Los datos se obtienen directamente de ti y sólo de ti, por lo que tienes completo control de la naturaleza y el alcance de los datos.  Puedes dejar de hacer el test en cualquier momento. Tus respuestas al test sólo se envían a la Iglesia de Scientology de Europa si se completa el test en su totalidad. La única consecuencia de que no proporciones alguno de los datos solicitados en el test sería que no se puede hacer una evaluación completa o correcta del test, y por ello no puedes recibir la orientación que podrías recibir de otro modo.</p>
+                                                <br />
+                                                <p>Las respuestas que das en el formulario del test serán evaluadas por la Iglesia de Scientology de Europa o en una Iglesia local de Scientology con la ayuda de un programa informático que produce un cuadro gráfico de los resultados ("la gráfica").  La gráfica y los datos de contacto serán enviados automáticamente a una Iglesia local de Scientology en tu área.  Las respuestas de tu test también pueden ser transmitidas a la misma Iglesia de Scientology.  El personal cualificado de la Iglesia de Scientology puede usar la gráfica para ayudarte a entenderte a tí mismo, tal como se describe en el folleto: "El Test de Análisis de Capacidad Oxford (OCA)".  La gráfica y las respuestas del test se eliminarán, después de 3 meses como máximo, si no has mostrado interés posterior en la guía espiritual de la Iglesia de Scientology o si pides que se eliminen antes.  El Test y sus resultados no se revelarán a ninguna otra entidad.</p>
+                                                <br />
+                                                <p>Tus datos de contacto únicamente serán utilizados para ponerse en contacto contigo en relación con la evaluación del test y  proporcionarte más información en cuanto a tus resultados.</p>
+                                                <br />
+                                                <h4>Consentimiento:</h4>
+                                                <br />
+                                                <p>Entiendo y estoy de acuerdo con lo anterior y doy consentimiento al procesamiento de los datos que proporciono con los fines antes mencionados y para ser contactado por mi Iglesia de Scientology local para esos fines, que incluye el e-mail, mensaje de texto y/o por teléfono si he proporcionado los datos de contacto.  En cualquier momento puedo objetar un posterior uso de mis datos de contacto enviando una objección a la Iglesia de Scientology de Europa, o a mi Iglesia de Scientology local. </p>
+                                            </div>
+                                        </span>
+
+                                        <hr id="legal-sep-bar">
+
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <div class="pull-right flip">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="legal-agreement" value="agree"> Estoy de acuerdo
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <button type="button" class="btn btn-primary disabled eu-start-button">Continúa</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col-md-8 col-md-pull-4 long-col">
+
+                        <div class="hidden-sm hidden-xs">
+                            <h2 class="mb0">HAZ EL MÁS PRECISO </br>Y FIABLE</h2>
+                            <h2 class="mt0"><strong>TEST DE PERSONALIDAD</strong></h2>
+                            <div class="pull-right flip pie-chart-find-out-more ml3 mr3">
+                                <div style="width: 234px; height: 215px; background-size: 159.95%;" class="sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-graph-oca-es-ES-jpg"></div>
+
+
+
+                                <a href="/index02.html" class="pull-right flip">
+                                    Rellena este formulario<br />para empezar tu test
+                                </a>
+
+                            </div>
+
+                            <p>Tu coeficiente de inteligencia, personalidad y aptitud determinan tu éxito y felicidad futuros. Millones de personas se han beneficiado del Análisis de Capacidad Oxford desde 1960.  Este es el único test de este tipo que proporciona un análisis exacto y medible que además se entrega de forma personalizada e incluye recomendaciones prácticas adecuadas a tus necesidades, basadas en tus resultados.</p>
+                            <p>Eres una persona única con tus propios rasgos de personalidad; algunos de estos rasgos  te posibilitan lograr magníficas cosas en la vida, y otras puede que parezcan restringirte y finalmente suprimir tu verdadero potencial.</p>
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr class="hidden-sm">
+
+                        <h2>CÓMO <b>FUNCIONA</b></h2>
+
+
+                        <div class="steps-box row">
+                            <div class="col-md-7">
+                                <h4>Paso 1: <span class="step-color">HAZ EL TEST</span></h4>
+
+                                <p>El test de Análisis de Capacidad Oxford (OCA) identifica las 10 características más importantes de tu personalidad que influenciarán tu futuro.</p>
+                                <p>Es un análisis científico basado en hechos, tomado de tus respuestas. Es tu opinión de ti mismo. Lleva alrededor de una hora completarlo.</p>
+
+                            </div>
+                            <div class="col-md-5">
+                                <div class="sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-step-01a-min-80-jpg sprite-fit-in" style="padding-bottom: 60.18%; background-size: 212.46%"></div>
+
+                            </div>
+                        </div>
+
+                        <div class="steps-box row">
+
+                            <div class="col-md-7">
+                                <h4>Paso 2: <span class="step-color">RECIBE TUS RESULTADOS </span></h4>
+
+                                <p>Después de terminar el test, tu análisis de personalidad se genera y se muestra. Esto lleva menos de un minuto.</p>
+                                <p>Muestra tus puntos fuertes y débiles, qué características de tu personalidad puedes aprovechar y cuáles necesitan ayuda.</p>
+                            </div>
+
+                            <div class="col-md-5">
+
+                                <div><img id="heb_org_image" src="https://files.ondemandhosting.info/imagecache/cropfit@w=295@cr=147,30,2643,1590@qa=85/data/www.scientology.org/files/orgs/mexico-centro-historico/night-shot_es_ES.jpg?_=ddcGknKu" /></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="steps-box row mb2">
+
+                            <div class="col-md-7">
+                                <h4>Paso 3: <span class="step-color">CONSULTA</span></h4>
+
+                                <p>El análisis de la gráfica muestra distintos rasgos de personalidad, y es la interrelación de estos rasgos los que proporcionan la mayor imagen de tu personalidad.</p>
+                                <p>Por lo tanto, proporcionamos asesoramiento gratuito personal para ofrecerte una evaluación detallada de tu análisis de personalidad. Uno de nuestros consultores capacitados te lo entregará.</p>
+                                <p>En esta entrevista personal tendrás una mayor comprensión de los puntos fuertes y débiles de tu personalidad, y se establece la ruta recomendada para tu éxito rápido y duradero.</p>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div>
+                                    <div class="sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-step-03-jpg sprite-fit-in" style="padding-bottom: 60.18%; background-size: 212.46%"></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <hr>
+
+                        <h2>¿QUÉ ES LO QUE HACE AL OCA<b> ÚNICO?</b></h2>
+
+                        <div class="row">
+
+                            <div class="col-md-7">
+
+                                <p>Ningún otro test de personalidad y análisis te da ambos: <em>resultados</em>  y <em>soluciones prácticas</em>.</p>
+                                <p>Tú puedes ser más competente exitoso, y feliz de lo que jamás pensaste que fuera posible, en cuanto identificas las áreas clave de tu personalidad. Mediante descubrir qué rasgos estan siendo beneficiosos en tu vida y cuales se necesitan mejorar, puedes dar los pasos adecuados para mejorar tus puntos fuertes y superar tus debilidades. </p>
+
+                                <p>Además, el test OCA y la evaluacion de este es un servicio GRATUITO y no implica ninguna obligación.</p>
+
+                            </div>
+
+
+                            <div class="oca-img col-md-5 pl2">
+                                <div class="sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-graph-oca03-es-ES-jpg sprite-fit-in" style="padding-bottom: 81.72%; background-size: 100.00%"></div>
+
+
+                                <div class="oca-note mb4">Muchos que siguen los cursos recomendados  experimentan un mejoramiento en los puntos de su gráfica de personalidad <em>y</em> su coeficiente de inteligencia </div>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="oca-realyou">
+                            <div class="inner">
+                                <h2 class="mt1">CONOCE AL <b>VERDADERO TÚ</b></h2>
+                                <p>
+                                    Casí toda la vida se nos ha enseñado a creer que la personalidad es un rasgo genético que no se puede cambiar y que simplemente se tiene que "convivir con ello".  Eso no es verdad. El hecho es que puedes cambiar tu personalidad y lograr una versión de ti mismo mucho mejor y más feliz, alguien que se enfrenta y supera los retos de la vida con conocimiento y  facilidad; <em>el verdadero tú</em>.
+                                    <ul>
+                                        <li>Descubre tus áreas problemáticas, tu nivel de felicidad, confianza en ti mismo, estabilidad y más.</li>
+                                        <li>Descubre cómo tu personalidad determina tu habilidad en las relaciones interpersonales. </li>
+                                        <li>Descubre tus puntos fuertes y cómo incrementarlos para que puedas sacar más provecho de la vida.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="succes mt3">
+
+                            <h2 class="mb2">ÉXITOS<b> PERSONALES</b></h2>
+
+                            <div class="row mb2">
+                                <div class="col-xs-3 pr1">
+                                    <div class="sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-succes-02-jpg sprite-fit-in" style="padding-bottom: 74.56%; background-size: 404.04%"></div>
+
+                                </div>
+                                <div class="col-sm-9">
+                                    <h5 class="mt0">ENCONTRAR LAS RESPUESTAS</h5>
+                                    <p>"Me encontré con un montón de respuestas que siempre he estado buscando y algunas que ni me di cuenta que estaba buscando aparecieron. Casi parecía demasiado simple, así como: '¿Es posible que sea tan fácil?' ¡Realmente lo es!" — David</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb2">
+                                <div class="col-xs-3 pr1">
+                                    <div class="sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-succes-03-jpg sprite-fit-in" style="padding-bottom: 74.56%; background-size: 404.04%"></div>
+
+                                </div>
+                                <div class="col-sm-9">
+                                    <h5 class="mt0">LOGRAR METAS</h5>
+                                    <p>"Con lo que he aprendido he sido capaz de tener éxito en mi campo,en mi trabajo, y tengo que decir que esto realmente me ayudó a conseguir mis sueños, y los consigo del mejor modo posible". — Daniella</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb2">
+                                <div class="col-xs-3 pr1">
+                                    <div class="sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-succes-04-jpg sprite-fit-in" style="padding-bottom: 74.56%; background-size: 404.04%"></div>
+
+                                </div>
+                                <div class="col-sm-9">
+                                    <h5 class="mt0">GANAR CERTEZA</h5>
+                                    <p>"Yo era muy inseguro, y me preguntaba por qué no estaba teniendo éxito en la vida. Ahora tengo mucha seguridad.  Puedo llevarme mejor con la gente y puedo ayudarles mejor.  ¡Ahora me conozco!" — Cynthia</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb2">
+                                <div class="col-xs-3 pr1">
+                                    <div class="sprite-imagecache-cropfit-data-www-curiousaboutyourself-org-files-sprite-succes-05-jpg sprite-fit-in" style="padding-bottom: 74.56%; background-size: 404.04%"></div>
+
+                                </div>
+                                <div class="col-sm-9">
+                                    <h5 class="mt0">MEJORAR LAS RELACIONES</h5>
+                                    <p>"Soy una clase de tipo muy del campo y rudo. Ahora, mi relación con la gente ha mejorado muchisimo. Mi esposa y yo estamos sorprendidos. La vida cotidiana es divertida. Parece que no hay nada que no seamos capaces de manejar ahora". — Shawn</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="language_selector" class="modal bs-modal-center" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                            <div class="row">
+                                <div class="col-sm-4"><a href="https://www.oxfordcapacityanalysis.org/">ENGLISH</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.dk/">DANSK</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.nl/">NEDERLANDS</a></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4"><a href="https://www.oca.scientologie.fr/">FRANÇAIS</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.fr.scientology.ca/">FRANÇAIS (CANADIEN)</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.de/">DEUTSCH</a></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.gr/">ΕΛΛΗΝΙΚA</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.org.il/">עברית</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.szcientologia.org.hu/">MAGYAR</a></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.it/">ITALIANO</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.jp/">日本語</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientologi.no/">NORSK</a></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.ru/">РУССКИЙ</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientologi.se/">SVENSKA</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.org.tw/">繁體中文</a></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.pt/">PORTUGUÊS</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.org.mx/">ESPAÑOL</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.ph/">FILIPINO</a></div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4"><a href="https://www.analisedecapacidadeoxford.org.br/">PORTUGUÊS (BRASIL)</a></div>
+                                <div class="col-sm-4"><a href="https://www.oca.scientology.es/">ESPAÑOL (CASTELLANO)</a></div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="footer">
+                <div class="footer-legal">
+                    © 2019 Iglesia de Scientology.  Todos los derechos reservados.
+                    <div class="pull-right flip">
+                        <a href="/privacy-notice.html">Confidencialidad</a> - <a href="/terms.html">Términos de Uso</a> - <a href="/legal-notice.html">Aviso Legal</a>
+
+
+                        - <a href="/cookie-policy.html">
+                            Cookie Policy
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <script src="/theme/js/_combined.js?_=ddcGknKu"></script>
+
+        <script type="text/javascript" src="https://tr.standardadmin.org/tr.action" async></script>
+
+
+
+
+        <script>
+
+
+        var _tr = window._tr || [];
+
+
+
+        var globalLanguage = "es_ES";
+
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-932986-27');
+        ga('require', 'GTM-5HGTWLX');
+        ga('send', 'pageview');
+
+
+
+        function _ga_trackEvent(ec, ea, el) {
+            window._tr && _tr.push(['_trackEvent', ec, ea, el]);
+            window._gaq && _gaq.push(['_trackEvent', ec, ea, el]);
+            window.ga && ga('send', 'event', ec, ea, el);
+
+            window._gaq || window.ga || (window.console && console.log.apply(console, arguments));
+        }
+
+        </script>
+
+
+
+        <script type="text/javascript">
+
+            var google_conversion_id = 1000537208;
+            var google_conversion_label = "O9wICPi86AMQ-PiL3QM";
+            var google_custom_params = window.google_tag_params;
+            var google_remarketing_only = true;
+
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+        <noscript>
+            <div style="display:inline;"> <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1000537208/?value=0&amp;label=O9wICPi86AMQ-PiL3QM&amp;guid=ON&amp;script=0" /> </div>
+        </noscript>
+
+
+        <script type="text/javascript" src="//nexus.ensighten.com/choozle/700/Bootstrap.js"></script>
+
+
+
+
+        <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+        <script type="text/javascript">twttr.conversion.trackPid('nuozn', { tw_sale_amount: 0, tw_order_quantity: 0 });</script>
+        <noscript>
+            <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=nuozn&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+            <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=nuozn&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+        </noscript>
+
+
+
+
+
+
+
+        <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+
+    fbq('init', '1019853528067373');
+    fbq('track', 'PageView');
+        </script>
+        <noscript>
+
+
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1019853528067373&ev=PageView&noscript=1" />
+        </noscript>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+
+    $(document).ready(function() {
+
+        $('.oca-form .oca-form-privacy-note-label').on('touchstart', function(e) {
+            if (e && e.target && e.target.nodeName.toLowerCase() == 'a') return true;
+            $(this).toggleClass('active');
+        });
+
+    });
+
+        </script>
+
+        <script type="text/javascript">
+        setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0013/0779.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+        </script>
+
+
+
+
+
+        <script>
+
+
+
+
+
+
+
+
+
+    var gcui_eu_country_list = {
+        AT: 'de',
+        BE: 'nl',
+
+
+
+        DK: 'da',
+
+
+        FR: 'fr',
+        DE: 'de',
+        GR: 'el',
+        HU: 'hu',
+
+        IT: 'it',
+
+
+
+
+        NL: 'nl',
+
+        PT: 'pt',
+
+
+
+        ES: 'es_ES',
+        SE: 'sv',
+
+        RU: 'ru',
+    };
+
+    var countryOptions, countryDefault;
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+
+    $.when(
+
+        $.ajax('/lookups/country_list.html', {
+            cache: true,
+            data: {
+                locale: 'es_ES',
+            },
+            success: function(countries) {
+
+                var countryArray = Object.keys(countries).reduce(function(m, k) {
+                    return m.concat([[k, countries[k]]]);
+                }, []);
+
+                countryArray.sort(function(a, b) {
+
+
+                    if (''.localeCompare) return a[1].toLowerCase().localeCompare(b[1].toLowerCase());
+
+
+                    if (a[1] < b[1]) return -1;
+                    return 1;
+
+                });
+
+                countryOptions = countryArray.reduce(function(m, v) {
+                    return m + '<option value="' + v[0] + '">' + v[1] + '</option>';
+                }, '');
+
+            }
+        }),
+
+        $.ajax({
+            url: '/gcui-globaldata/geolocate-api.action?results=10' + (getDebugIp() ? '&ip_override=' + getDebugIp() : ''),
+            dataType: 'jsonp',
+            cache: false,
+            data: {
+                locale: "es_ES"
+            },
+            timeout: 3000,
+            success: function(data) {
+
+                if (!data || !data.result || data.result.status !== 'success' || !data.result.estimated_location) {
+                    window.console && console.error && console.error('ERROR: geolocation errored:');
+                    window.console && console.error && console.error(data);
+                    return;
+                }
+
+                countryDefault = data.result.estimated_location.country_code;
+
+            }
+        })
+
+    ).then(
+        function(a1, a2) {
+            document.getElementById('country').innerHTML = countryOptions;
+            $('#country').on('change', function (e) {
+                $('#countryname').val($('#country').find(':selected').text());
+                if ($('#country').find(':selected').val() == 'US' || $('#country').find(':selected').val() == 'CA') {
+                    $('[for="zipcode"]').addClass('required');
+                } else {
+                    $('[for="zipcode"]').removeClass('required');
+                }
+            });
+            countryDefault && $('#country').val(countryDefault);
+            $('#countryname').val($('#country').find(':selected').text());
+            if (countryDefault != 'US' && countryDefault != 'CA') $('[for="zipcode"]').removeClass('required');
+        },
+        function(a1, a2) {
+            document.getElementById('country').innerHTML = countryOptions;
+            $('#country').on('change', function (e) {
+                $('#countryname').val($('#country').find(':selected').text());
+                if ($('#country').find(':selected').val() == 'US' || $('#country').find(':selected').val() == 'CA') {
+                    $('[for="zipcode"]').addClass('required');
+                } else {
+                    $('[for="zipcode"]').removeClass('required');
+                }
+            });
+            countryDefault && $('#country').val(countryDefault);
+            $('#countryname').val($('#country').find(':selected').text());
+            if (countryDefault != 'US' && countryDefault != 'CA') $('[for="zipcode"]').removeClass('required');
+        }
+    );
+
+    $(document).on('submit', '#oca_start_form', function(e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        $('.btn-oca-submit').attr('disabled', 'disabled');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if ($('[name="country"]').val() == 'RU') {
+
+
+
+
+
+
+
+
+
+
+                changeLegalNoticeLocale(gcui_eu_country_list[$('[name="country"]').val()]);
+                $('input[name="legal-agreement"]').removeAttr('checked');
+                $('.eu-start-button').addClass('disabled');
+                $('#legal_disclaimer').modal('show');
+
+            } else {
+
+
+                startOca();
+
+            }
+
+
+        return false;
+    });
+
+    $(document).on('click', '[name="legal-agreement"]', function(e) {
+        if (this.checked) {
+            $('.eu-start-button').removeClass('disabled');
+        } else {
+            $('.eu-start-button').addClass('disabled');
+        }
+    });
+
+    $(document).on('click', '.eu-start-button', function(e) {
+        if ($(this).hasClass('disabled')) return false;
+        startOca();
+
+    });
+
+
+
+    function startOca() {
+
+        $('#error_message_holder').html('');
+
+
+
+
+
+        var formRes = [].reduce.call($('#oca_start_form').find('input,textarea,select'), function(m, elem) {
+
+            if (elem.name == "") return m;
+
+            if (elem.type == 'radio') {
+                if (elem.checked) m[elem.name] = elem.value;
+            } else {
+                m[elem.name] = (elem.type == 'checkbox') ? elem.checked : elem.value;
+            }
+
+            return m;
+
+        }, {});
+
+
+        formRes.moreinfo = 'no';
+
+
+
+
+        formRes.source = 'oca-site' + (window.globalTrackingSource ? '-' + globalTrackingSource : '');
+        formRes.next_autoresponder = [];
+        formRes.howfound = '';
+
+
+
+
+
+        $.ajax({
+            url: '/oca-service.action',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                id: (Math.random() + '').replace(/^0\./, ''),
+                method: "startOCATest",
+                params: JSON.stringify(formRes),
+            }
+        }).done(function(data) {
+
+            if (data.error) {
+                $('#legal_disclaimer').modal('hide');
+                $('.btn-oca-submit').removeAttr('disabled');
+                return show_error(data.error) && console.error(data.error);
+            }
+
+
+            location = '/start.action';
+
+
+        }).error(function(xhr, status, error) {
+            $('.btn-oca-submit').removeAttr('disabled');
+            var err = xhr.responseText;
+            window.console && console.error && console.error(err);
+            $('#legal_disclaimer').modal('hide');
+            show_error('Error en la validación, por favor inténtalo de nuevo. Si este error persiste, por favor contacta con el administrador del sitio. <strong>' + err + '</strong>');
+        });
+
+    }
+
+    function show_error(err) {
+        $('#error_message_holder').html(
+            '<div id="error_message" class="alert alert-danger alert-dismissible top-alert">' +
+                '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                '<span class="error-message"></span>' +
+            '</div>'
+        );
+        $('#error_message .error-message').html(err);
+
+        $('.title-bar')[0].scrollIntoView();
+
+        return true;
+    }
+
+
+    var legal_notices = {
+
+        de: [
+            'Bitte lesen Sie dieses Dokument bis zum Ende durch. Markieren Sie das Kästchen neben „Akzeptieren“ und klicken Sie auf „Weiter“.',
+            '\x3cdiv class=\x22legal-special\x22\x3e\n\x3ch4 align=\x22center\x22\x3eChurch of Scientology Europe\x3c\/h4\x3e\n\t\n\t\x3cbr \/\x3e\x3cbr \/\x3e\n\t\n\n\x3cp\x3eIch möchte den als OCA-Test bekannten Persönlichkeitstest durchführen, der von Scientology Kirchen weltweit angeboten wird, so auch von der Church of Scientology Europe.\x3c\/p\x3e\n\n\x3cp\x3eIch habe die Informationen auf der „Oxford Capacity Analysis (OCA) Test“-Website gelesen und ich verstehe die Natur und Bedeutung dieses Tests vollständig. Ich verstehe, dass der Test nicht ein medizinischer oder psychologischer Test, sondern ein spezielles Hilfsmittel der Scientology Kirche ist und dass er in mit den spirituellen Lehren ihres Gründers, L. Ron Hubbard, im Zusammenhang steht. Nach gründlicher Überlegung habe ich mich aus meinem eigenen freien Willen entschlossen, den Test durchzuführen.\x3c\/p\x3e\n\x3cbr \/\x3e\n\n\x3ch4\x3eInformation zum Datenschutz:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eSie geben Ihre Zustimmung, dass die Church of Scientology Europe Ihren Namen, Ihre Kontaktinformationen und die Antworten, die Sie beim Absolvieren des Tests geben, sowohl auf Papier als auch in computerisierter Form speichern darf. Dies dient allein dem Zweck der Auswertung des Tests, sodass Sie anschließend von einem ausgebildeten hauptamtlichen Mitglied der Ihrem Wohnort am nächsten gelegenen örtlichen Scientology Kirche eine Auswertung und Beratung erhalten können. Die von Ihnen erbetenen und zur Verfügung gestellten Informationen werden zur Durchführung des Tests und der anschließend erfolgenden Beratung benötigt. Die Informationen werden direkt von Ihnen und nur von Ihnen erhoben. Sie kontrollieren also vollständig den Inhalt und den Umfang der übermittelten Informationen. Sie können den Test jederzeit abbrechen. Ihre Antworten werden erst zur Church of Scientology Europe weitergeleitet, wenn Sie den Test vollständig ausgefüllt haben. Falls Sie irgendwelche für den Test benötigten Informationen nicht angeben, hat dies als einzige Konsequenz, dass der Test nicht vollständig oder nicht korrekt ausgewertet werden kann und Sie deshalb nicht die erwünschte Beratung erhalten können. \x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eIhre Testantworten werden von der Church of Scientology Europe oder der zu Ihrem Wohnort nächstgelegenen örtlichen Scientology Kirche mithilfe eines computerisierten Programms ausgewertet, das eine graphische Darstellung des Resultats erstellt („Graph“ genannt). Der Graph und Ihre Kontaktinformationen werden automatisch an die nächstgelegene Scientology Kirche Ihres Wohnortes weitergeleitet. Ihre Antworten auf die Testfragen können ebenfalls an diese Scientology Kirche weitergeleitet werden. Qualifizierte hauptamtliche Mitglieder dieser Kirche können, wie dies im Heft „Der Oxford Capacity Analysis (OCA) Test“ beschrieben ist, den Graph verwenden, um Ihnen zu helfen, sich selbst besser zu verstehen. Der Graph und die Testantworten werden spätestens nach 3 Monaten gelöscht, falls Sie kein weiteres Interesse an einer Auswertung und Beratung seitens der Scientology Kirche gezeigt haben oder falls Sie bereits vorher den Wunsch auf Löschung äußern. Die Testinformationen werden mit Ausnahme der örtlich nächstgelegenen Scientology Kirche an keinen Dritten weitergeleitet.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eIhre Kontaktinformationen werden nur dazu verwendet, Sie bezüglich der Auswertung des Tests zu kontaktieren und Ihnen weitere Informationen bezüglich der Testergebnisse zu übermitteln.\x3c\/p\x3e\n\n\x3cbr \/\x3e\n\x3ch4\x3eZustimmung:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eIch verstehe das Obige und bin mit der Erhebung, Verarbeitung, Nutzung und Übermittlung der Test- und Kontaktdaten zum oben genannten Zweck durch die Church of Scientology Europe und eine im Verhältnis zu meinem Wohnort nächstgelegene örtliche Scientology Kirche einverstanden. Ebenso erkläre ich mich damit einverstanden, dass mich diese bisher nicht bestimmbare örtliche Scientology Kirche zu diesem Zweck kontaktiert, sei es per E-Mail, per Text-Mitteilung und\/oder per Telefon, sofern ich diese Kontaktdaten angegeben habe. Ich kann jederzeit der weiteren Verarbeitung und Nutzung meiner persönlichen Daten und Kontaktdaten widersprechen, indem ich eine Mitteilung an die E-Mail- oder Postadresse der Church of Scientology Europe oder an die mich kontaktierende örtliche Scientology Kirche sende.\x3c\/p\x3e\x3c\/div\x3e',
+            'Akzeptieren',
+            'Weiter',
+        ],
+        nl: [
+            'Lees het document hieronder. Markeer het \x22Ik ga akkoord\x22 vakje en klik op de knop om te accepteren.',
+            '\x3cdiv class=\x22legal-special\x22\x3e\x3ch4 align=\x22center\x22\x3eChurch of Scientology Europe\x3c\/h4\x3e\n    \x3cbr \/\x3e\x3cbr \/\x3e\n\x3cp\x3eIk wil deelnemen aan de persoonlijkheidstest bekend als de OCA test van de wereldwijde Scientology kerk, waartoe de Church of Scientology Europe behoort.\x3c\/p\x3e\n\n\x3cp\x3eIk heb de informatie gelezen op de “De Oxford Capacity Analysis (OCA) Test” website, en ik begrijp de aard, betekenis en het belang van deze test volledig. Ik realiseer me dat de test geen medische of psychologische test is, maar een speciale tool van de Scientology kerk, gerelateerd aan de spirituele leer van haar stichter, L. Ron Hubbard. Ik heb deze verklaring ook gelezen en begrepen. Na het overwogen te hebben, heb ik zelf besloten om op mijn eigen verzoek de test te doen.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eBescherming van persoonsgegevens\/privacy:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eU hebt uw toestemming gegeven om uw naam, contactgegevens, de datum van de test, de antwoorden die u geeft in reactie op de test en de resultaten van deze test, op te slaan op papier alsook in elektronische vorm door de Church of Scientology Europe (gevestigd in Denemarken), met als doel de evaluatie van de test, zodat u daarna kan worden voorzien van spirituele begeleiding door de leden van de plaatselijke Scientology kerk in uw omgeving. De informatie die van u wordt gevraagd, is noodzakelijk voor het uitvoeren van deze test en deze evaluatie ervan en voor de begeleiding. De gegevens worden rechtstreeks van u verkregen, en alleen van u, zodat u volledig de controle houdt over de aard en omvang van de gegevens. U kunt de test op elk moment onderbreken. Uw antwoorden op de test worden alleen verstuurd naar de Church of Scientology Europe wanneer u de test volledig invult. De enige consequentie voor u, van het niet verstrekken van een van de gevraagde gegevens in de test, zou zijn dat de test niet volledig of correct geëvalueerd kan worden en dat u daardoor dus niet kan worden voorzien van de begeleiding die u anders zou kunnen ontvangen.\x3c\/p\x3e\n\n\x3cp\x3eDe antwoorden die u invult op het testformulier zullen worden geëvalueerd door de Church of Scientology Denmark of een plaatselijke Scientology Kerk met de hulp van een geautomatiseerd programma dat een grafische grafiek van de resultaten produceert (“de grafiek”). De grafiek en uw contactgegevens worden automatisch verzonden naar een plaatselijke Scientology kerk in uw omgeving. De antwoorden van uw test kunnen ook worden doorgegeven aan diezelfde Scientology kerk. Gekwalificeerd personeel van deze Scientology kerk kan de grafiek gebruiken om u te helpen uzelf te begrijpen, zoals beschreven in de brochure “De Oxford Capacity Analysis (OCA) Test”. De grafiek en antwoorden van de test zullen op zijn laatst na 3 maanden worden verwijderd, indien u geen verdere interesse heeft getoond in de spirituele begeleiding van de Scientology kerk of als u eerder hebt gevraagd om deze te verwijderen. Het zal niet openbaar worden gemaakt aan enige andere entiteit.\x3c\/p\x3e\n\n\x3cp\x3eUw gegevens worden enkel gebruikt om contact met u om te nemen over de evaluatie van de test en om u te voorzien van meer informatie over de resultaten.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eToestemming:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eIk begrijp en ga akkoord met het bovenstaande en geef toestemming tot deze verwerking van de gegevens die ik gegeven heb voor de hierboven genoemde doeleinden en om gecontacteerd te worden door mijn plaatselijke Scientology kerk voor deze doeleinden, met inbegrip van e-mail, sms en\/of telefoon indien ik deze contactgegevens gegeven heb. Ik kan op elk moment bezwaar maken tegen het verdere gebruik van mijn contactgegevens door het sturen van een bezwaar naar de Church of Scientology Europe, of naar mijn lokale Scientology kerk.\x3c\/p\x3e\x3c\/div\x3e',
+            'Ik ga akkoord',
+            'Ga verder',
+        ],
+        da: [
+            '',
+            '\x3cp\x3eDe her afgivne oplysninger opbevares af Scientologi Kirken Danmark eller en anden dansk Scientologi organisation for at kunne give dig testresultatet og information om andre mulige tjenesteydelser. Alle tester slettes senest et år efter udfyldelsesdatoen eller senest et år efter seneste kontakt. Du kan altid få oplyst, hvilke oplysninger vi har om dig, og du kan altid få dem slettet ved at rette henvendelse til os. Da det ifølge Persondata­loven kræver dit samtykke, bedes du sætte dit kryds her for at bekræfte, at du er indfor­stået med dette.\x3c\/p\x3e\n\x3cp\x3eDatatilsynet er tilsynsførende myndighed med hensyn til behandling af personoplysninger. Du kan læse mere om retningslinjerne på HYPERLINK \x3ca href=\x22http:\/\/www.datatilsynet.dk\x22 target=\x22_blank\x22\x3ewww.datatilsynet.dk\x3c\/a\x3e.\x3c\/p\x3e',
+            'Jeg er enig.',
+            'Fortsæt',
+        ],
+        fr: [
+            'Faites défiler et lisez ce document. Cochez la case \x22Je consens\x22 et cliquez sur le bouton pour accepter.',
+            '\x3cdiv class=\x22legal-special\x22\x3e\x3cp\x3eJe désire participer au test de personnalité appelé le test OCA de l’Église de Scientology internationale, dont fait partie l’Église de Scientology d’Europe.\x3c\/p\x3e\n \x3cbr \/\x3e\n\x3cp\x3eJ’ai lu les informations au sujet du site du test OCA et je comprends parfaitement la nature, le contenu et l’importance de ce test. Je comprends qu’il ne s’agit en rien d’un test d’ordre médical ou psychologique que c’est un outil utilisé par l’Église de Scientology portant sur les enseignements spirituels de son fondateur, L.\x26nbsp;Ron\x26nbsp;Hubbard. J’ai également lu et je comprends cette déclaration. Après réflexion, j’ai décidé en toute connaissance de cause de faire le test.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eProtection des données :\x3c\/h4\x3e\n \x3cbr \/\x3e\n\x3cp\x3eVous consentez à ce que votre nom, vos coordonnées, la date du test, vos réponses aux questions du test et les résultats de ce test, soient gardés sur papier et sous format électronique par l’Église de Scientology pour l’Europe dans le but d’évaluer le test afin que vous puissiez recevoir par la suite des conseils d’ordre spirituel de la part des membres de l’Église de Scientology de votre région. Les informations demandées permettront de calculer les résultats de votre test et de vous en donner une évaluation, et de vous fournir également des conseils. Vous êtes la seule personne qui nous remettra des informations à votre sujet et personne d’autre n’interférera. Vous êtes libre d’arrêter le test à tout moment. Vos réponses au test sont envoyées uniquement à l’Église de Scientology pour l’Europe lorsque vous avez terminé le test. Un test non terminé ne prête à aucune conséquence, mais nous seront incapables de l’évaluer correctement et de vous fournir des conseils par la suite.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eLes réponses que vous fournissez dans ce test seront évaluées par l’Église de Scientology au Danemark ou par une Église de Scientology située dans votre région, à l’aide d’un programme informatique qui génère un graphique des résultats de voter test (dont on se réfère comme du « graphique »). Le graphique et vos coordonnées seront envoyés automatiquement à l’Église de Scientology la plus proche de chez vous. Les résultats de votre test peuvent également être transmis à cette Église de Scientology. Des membres compétents de cette Église pourront consulter ce graphique pour vous aider à mieux vous comprendre, comme le décrit le dépliant portant sur le test OCA. Le graphiqueet les réponses au test seront effacés après 3 mois au plus tard si vous n’êtes plus intéressé à recevoir des conseils de l’Église de Scientologyou si vous demandez à ce que vos informations soient effacées. Elles ne seront pas remises à un tiers.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eVos coordonnées seront uniquement utilisées pour vous contacter concernant l’évaluation de votre test et pour vous fournir des informations portant sur les résultats de votre test.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eConsentement :\x3c\/h4\x3e\n\x3cbr\/\x3e\nJe comprends les informations ci-dessus et donne mon accord, et je consens à ce que mes données soient traitées dans les buts susmentionnés et à être contacté par l’Église de Scientology de ma région dans cet objectif par e-mail, par text et\/ou par téléphone si j’ai consenti à fournir mes coordonnées. Je peux à tout moment refuser que l’Église de Scientology pour l’Europe ou l’Église de Scientologyde ma région utilisent à nouveau mes coordonnées.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eCe test n’est pas un test de psychologie ; la Scientology considère que la personnalité est d’ordre spirituel et n’emploie le test de personnalité que pour servir ses objectifs religieux. Vos réponses à ce test permettront de dégager une courbe montrant les dix traits dominants de votre personnalité. Les coordonnées que vous nous fournissez permettront à nos bénévoles de vous inviter dans leurs locaux pour interpréter votre test. La réponse à ce document est facultative, mais le défaut de réponse ne permettra pas d’évaluer votre test.\x3c\/p\x3e\x3c\/div\x3e',
+            'Je consens',
+            'Continuez',
+        ],
+        el: [
+            'Κάνε κατακύλιση περιεχομένων οθόνης (scroll down) και διάβασε το κείμενο.\nΜάρκαρε το κουτάκι \x22Συμφωνώ\x22 και κάνε κλικ στο κουμπί \x22Συνέχεια\x22 να το αποδεχθείς.',
+            '\x3cdiv class=\x22legal-special\x22\x3e\x3ch4 align=\x22center\x22\x3eΕκκλησία της Σαηεντολογίας της Ευρώπης\x3c\/h4\x3e\n    \x3cbr \/\x3e\x3cbr \/\x3e\n\x3cp\x3eΘέλω να συμμετέχω στο τεστ προσωπικότητας, γνωστό ως Τεστ Οξφόρδης για την Ανάλυση Ικανοτήτων της Διεθνούς Εκκλησίας της Σαηεντολογίας, στην οποία υπάγεται η Εκκλησία της Σαηεντολογίας της Ευρώπης.\x3c\/p\x3e\n\n\x3cp\x3eΈχω διαβάσει τις πληροφορίες στην ιστοσελίδα «Το Τεστ Οξφόρδης για την Ανάλυση Ικανοτήτων και κατανοώ πλήρως τη φύση, σημασία και σπουδαιότητα του τεστ.  Κατανοώ ότι το τεστ δεν είναι ιατρικό ή ψυχολογικό τεστ αλλά ένα ειδικό μέσο της Εκκλησίας της Σαηεντολογίας που συνδέεται με τις πνευματικές θεραπείες του Ιδρυτή της, Λ. Ρον Χάμπαρντ.  Έχω επίσης διαβάσει και κατανοώ αυτή τη δήλωση.  Έχοντας συλλογιστεί τα δεδομένα της, εκούσια έχω αποφασίσει, και με βάση το δικό μου αίτημα να κάνω το τεστ.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eΠροστασία Προσωπικών Δεδομένων:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eΣυμφωνείτε ότι το ονοματεπώνυμό σας, οι λεπτομέρειες επαφής, η ημερομηνία του τεστ, οι απαντήσεις στο τεστ και τα αποτελέσματα του τεστ θα αποθηκευτούν σε χαρτί και σε ηλεκτρονική μορφή στην Εκκλησία της Σαηεντολογίας της Ευρώπης για το σκοπό της αξιολόγησης του τεστ, ώστε στη συνέχεια να λάβετε πνευματική συμβούλευση από τα μέλη της τοπικής Εκκλησίας της Σαηεντολογίας στην περιοχή σας.  Οι πληροφορίες οι οποίες σας ζητούνται να παρέχετε είναι απαραίτητες για τη διεξαγωγή του τεστ, την αξιολόγησή του και τη συμβούλευση.  Τα δεδομένα θα ληφθούν κατευθείαν από σας και μόνο από εσάς, ώστε να διατηρήσετε τον έλεγχο της φύσης και έκτασης των δεδομένων.  Μπορείτε να σταματήσετε το τεστ οποιαδήποτε στιγμή θελήσετε.  Οι απαντήσεις στο τεστ στέλνονται στην Εκκλησία της Σαηεντολογίας της Ευρώπης μόνο αν ολοκληρώσετε το τεστ.  Η μόνη συνέπεια για εσάς, αν δεν παρέχετε κανένα από τα δεδομένα που ζητούνται, είναι ότι το τεστ δεν θα μπορεί να αξιολογηθεί πλήρως ή σωστά και γι’ αυτό δεν θα σας δοθεί η συμβούλευση που θα λαμβάνατε αν τα παρείχατε.\x3c\/p\x3e\n\n\x3cp\x3eΟι απαντήσεις που δίνετε στη φόρμα του τεστ θα αξιολογηθούν από την Εκκλησία της Σαηεντολογίας της Δανίας ή την τοπική σας Εκκλησία της Σαηεντολογίας με τη βοήθεια ενός μηχανογραφικού προγράμματος που παράγει το γράφημα των αποτελεσμάτων.  Το γράφημα και οι πληροφορίες επαφής θα σταλούν αυτόματα στην τοπική Εκκλησία της Σαηεντολογίας της περιοχής σας.  Οι απαντήσεις του τεστ σας μπορεί επίσης να μεταβιβαστούν στην ίδια Εκκλησία της Σαηεντολογίας.  Ειδικά εκπαιδευμένα άτομα αυτής της Εκκλησίας μπορούν να χρησιμοποιήσουν το γράφημα για να σας βοηθήσουν να κατανοήσετε τον εαυτό σας, όπως περιγράφεται στο φυλλάδιο «Το Τεστ Οξφόρδης για την Ανάλυση Ικανοτήτων (OCA)».  Το γράφημα και οι απαντήσεις του τεστ θα διαγραφούν μετά από 3 μήνες το αργότερο, αν δεν έχετε επιδείξει περαιτέρω ενδιαφέρον για την πνευματική συμβούλευση από την Εκκλησία της Σαηεντολογίας ή αν ζητήσετε να διαγραφούν νωρίτερα απ’ αυτό το διάστημα.  Δεν θα αποκαλυφθούν σε άλλο φορέα.\x3c\/p\x3e\n\n\x3cp\x3eΟι λεπτομέρειες επαφής σας θα χρησιμοποιηθούν μόνο για να επικοινωνήσουμε μαζί σας σχετικά με την αξιολόγηση του τεστ και να σας παρέχουμε με περαιτέρω πληροφορίες σχετικά με τα αποτελέσματα.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eΣυγκατάθεση:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eΚατανοώ και συμφωνώ με τα παραπάνω και συγκατατίθεμαι στην επεξεργασία των δεδομένων που παρέχω για τους παραπάνω αναφερόμενους σκοπούς και στην προσέγγιση από την τοπική Εκκλησία της Εκκλησίας για αυτούς τους σκοπούς, συμπεριλαμβανομένου του e-mail, του SMS ή του τηλεφώνου αν έχω παρέχει αυτές τις πληροφορίες επαφής.  Μπορώ οποιαδήποτε στιγμή να αρνηθώ την περαιτέρω χρήση των πληροφοριών επαφής μου, στέλνοντας την αντίρρησή μου στην Εκκλησία της Σαηεντολογίας της Ευρώπης ή στην τοπική Εκκλησία της Σαηεντολογίας.\x3c\/p\x3e\x3c\/div\x3e',
+            'Συμφωνώ',
+            'Συνέχεια',
+        ],
+        hu: [
+            'Görgessen tovább, és olvassa el ezt a dokumentumot! Jelölje be az alján lévő „elfogadom” négyzetet!',
+            '\n\x3cdiv class=\x22legal-special\x22\x3e\n\x3cp\x3e\x3cb\x3eA teszt kitöltése és az adatbekérő űrlap rovatainak kitöltését megelőzően – mielőtt a megadott adatok rögzítéséhez hozzájárulását adja –, kérjük körültekintően olvassa el az adatvédelemmel és az adatkezeléssel kapcsolatos szabályzatot. Ezen szabályzatban rögzítésre kerül, hogy a felhasználó (a tesztet kitöltő) által megadott adatok kezeléséhez a felhasználó hozzájárul, valamint, hogy a hozzájárulás önkéntes, továbbá a felhasználó a megfelelő tájékoztatást az adatkezelésről az adatok rögzítése előtt megkapta. A felhasználó hozzájárulását az Elfogadom gomb megnyomásával adja meg. A személyiségteszt elküldése után kérjük, hogy olvassa el a személyes kiértékeléssel kapcsolatos rövid tájékoztatót is.\x3c\/p\x3e\x3c\/b\x3e\n\x3cbr \/\x3e\n\x3cbr \/\x3e\n\x3ch4 align=center\x3eAdatkezelési tájékoztató és adatvédelmi nyilatkozat\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eAlapelvek\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA honlapot a Nemzetközi Szcientológia Egyház üzemelteti (a továbbiakban: Adatkezelő). A honlap szolgáltatásait a Felhasználó önként veszi igénybe, így az ehhez szükséges adatok kezelése önkéntes adatszolgáltatáson alapul. Adatkezelő az átadott személyes adatokat bizalmasan kezeli, és minden technikai és szervezési intézkedést megtesz annak érdekében, hogy a kezelt adatokhoz illetéktelen személy ne férjen hozzá.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eTárolt adatok és adatkezelés\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eA személyes adatok köre\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA honlap látogatói (a továbbiakban: felhasználók) által önkéntesen megadott alábbi adatok: vezetéknév, keresztnév, e-mail cím, telefonszám, életkor, nem, a tesztkitöltés időpontja (év, hónap, nap, óra, perc). Tesztet beküldő felhasználók esetén továbbá: a szerveren rögzített válaszok név, e-mail cím, telefonszám, életkor, nem, valamint a teszt válaszaiból generált kiértékelési értékek. Ezen felül opcionálisan megadható adatok statisztikai és ügyfélkapcsolati célokat szolgálnak (település).\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eTovábbi kezelt adatok\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA látogatás dátuma és időpontja, a felhasználó számítógépének IP címe, böngészőjének típusa, a megtekintett és az előzőleg látogatott weboldal címe.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eAz adatkezelés célja\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3e A weboldal látogatása során az Adatkezelő a szolgáltatás teljesítése, működésének ellenőrzése és a visszaélések megakadályozása érdekében rögzíti a látogatói, illetve felhasználói adatokat. \x3c\/p\x3e\n\x3cp\x3eA fentiekben körülírt személyes adatok kezelésének célja, hogy az Adatkezelő fel tudja venni a felhasználóval a kapcsolatot és a megadott adatok alapján a teszt eredményét személyesen ki lehessen értékelni a felhasználó számára. \x3c\/p\x3e\n\x3cp\x3eAz adatkezelés célja továbbá gazdasági reklámot is tartalmazó e-mail hírlevelek küldése a felhasználók részére, tájékoztatás az aktuális információkról, termékekről.\x3c\/p\x3e\n\x3cp\x3eA látogatás dátumát és időpontját, a felhasználó számítógépének IP címét, böngészőjének típusát, a megtekintett és az előzőleg látogatott weboldal címét kizárólag összesített és feldolgozott formában hasznosítjuk, szolgáltatásaink esetleges hibáinak kijavítása, minőségük javítása érdekében, továbbá statisztikai célokra.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eAdatkezelés jogalapja\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA honlap szolgáltatásait a felhasználó önként veszi igénybe. A bekért adatok az érintett felhasználó önkéntes hozzájárulásán alapulnak.\x3c\/p\x3e \n\x3cp\x3eAz adatkezelés jogalapja az érintett hozzájárulása, illetve az elektronikus kereskedelmi szolgáltatások, valamint az információs társadalommal összefüggő szolgáltatások egyes kérdéseiről szóló 2001. évi CVIII. törvény 13. § (3) bekezdése. \x3c\/p\x3e\n\x3cp\x3eGazdasági reklámot is tartalmazó e-mail hírlevelek küldése esetén az érintett önkéntes hozzájárulása és a gazdasági reklámtevékenység alapvető feltételeiről és egyes korlátairól szóló 2008. évi XLVIII. törvény 6. § (5) bekezdése.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eHírlevél\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eKérjük jelezze, ha nem kíván hírlevelet kapni. \x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eAz adatkezelés időtartama\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA tesztkérdésekre adott válaszokat a teszt kiköltésétől számított 60 napig tároljuk. Az adatkezeléshez hozzájáruló nyilatkozat visszavonásáig érvényes. A hírlevelek továbbításának megtiltását, a személyes adatok törlését vagy módosítását a kiküldött hírlevélben található linkre kattintva, vagy az \x3ca href=\x22mailto:adatok@tesztkozpont.net\x22\x3e adatok@tesztkozpont.net\x3c\/a\x3e e-mail címre küldött elektronikus üzenettel vagy postai úton, a jelen tájékoztatóban közzétett címen lehet kérni. A hozzájárulás visszavonása esetén 1 munkanapon belül az Adatkezelő minden személyes adatot töröl.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eAdattovábbítás\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA megadott adatok közül, a tesztkérdésekre adott válaszokat ugyanezekkel az adatvédelmi feltételekkel továbbítjuk harmadik személyek felé, úgymint Szcientológia Vallási Egyesület Központi Szervezet (1061 Budapest, Paulay Ede u. 52.). Kizárólag a kiértékelt eredményt, a felhasználó nevét, telefonszámát, e-mail címét és nemét tesszük hozzáférhetővé az Adatkezelő által felhatalmazott személyeknek, amelyek szükségesek a felhasználóval való kapcsolat felvételéhez és a teszt személyes kiértékeléséhez.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eRemarketing: \x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA weboldal alkalmaz remarketing technikát a következők szerint, az oldal népszerűsítésére: \x3c\/p\x3e\n\x3cul\x3e\x3cli\x3eTájékoztatjuk arról, hogy a hirdetéseit külső szolgáltatók, közöttük a Google, internetes webhelyeken jelenítik meg.\x3c\/li\x3e\n\x3cli\x3e Tájékoztatjuk arról, hogy külső szolgáltatók, közöttük a Google, cookie-k segítségével, a felhasználónak a webhelyen korábban tett látogatása alapján jelenítik meg a hirdetést a felhasználónak.\x3c\/li\x3e\n\x3cli\x3eInformáljuk arról, hogy a webhelyünket felkeresők letilthatják a Google cookie-használatát a Hirdetési beállítások kezelője segítségével.\x3c\/li\x3e\x3c\/ul\x3e\n\x3cbr \/\x3e\n\x3cp\x3eJelezzük a felhasználók számára, hogy a Network Advertising Initiative leiratkozási oldalán a külső szolgáltatók cookie-jait is letilthatják. \x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eAdatkezelők és adataik: \x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3e- Church of Scientology Europe\x3c\/p\x3e\n\x3cp\x3eFabriksparken 15, 2600 Glostrup Denmark\x3c\/p\x3e\n\x3cp\x3eTel.: \x2b45 33 73 77 77\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3e- Szcientológia Vallási Egyesület Központi Szervezet\x3cp\x3e\n\x3cp\x3e1061 Budapest, Paulay Ede utca 52.\x3c\/p\x3e\n\x3cp\x3eTel\/fax: \x2b361-321-5290 \x3c\/p\x3e\n\x3cp\x3eE-mail: \x3ca href=\x22mailto:adatok@tesztkozpont.net\x22\x3eadatok@tesztkozpont.net\x3c\/a\x3e\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA felhasználó által megadott adatokhoz kizárólag az Adatkezelő szervezet által feljogosított személyek kapnak hozzáférést az adatkezelés céljával összhangban lévő feladataik ellátása érdekében.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eAdatfeldolgozó adatai: \x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eA cégelnevezése\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eSzcientológia Vallási Egyesület Központi Szervezet\x3c\/p\x3e\n\x3cp\x3eSzékhely: 1061 Budapest, Paulay Ede utca 52.\x3c\/p\x3e\n\x3cp\x3eTel\/fax: \x2b361-321-5290 \x3c\/p\x3e\n\x3cp\x3eE-mail: \x3ca href=\x22mailto:adatok@tesztkozpont.net\x22\x3eadatok@tesztkozpont.net\x3c\/a\x3e\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eTárolt adatok biztonságára vonatkozó információk \x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA nyilvántartott adatok kezelését minden esetben az érvényes adatvédelmi törvény előírásainak betartásával végezzük. Adatbiztonsági intézkedéseink keretében jelszavas védelem akadályozza az illetéktelen hozzáférést, másrészt egy munkatársunk feladata az adatvédelmi szabályok betartásának szigorú ellenőrzése.\x3c\/p\x3e \n\x3cbr \/\x3e\n\x3cp\x3eFelhívjuk az Adatkezelő részére adatközlők, a felhasználók figyelmét, hogy amennyiben nem saját személyes adataikat adják meg, az adatközlő kötelessége az érintett hozzájárulásának beszerzése.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eA szervereink által automatikusan naplózott információk\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eSzervereink automatikusan naplózzák felhasználóink IP-címét, az általuk használt operációs rendszer és böngészőprogram típusát és néhány más információt. Ezeket az információkat kizárólag összesített és feldolgozott formában hasznosítjuk, szolgáltatásaink esetleges hibáinak kijavítása, minőségük javítása érdekében és statisztikai célokra.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eKülső szerverek segítik a honlap látogatottsági és egyéb webanalitikai adatainak független mérését és auditálását (Google Analytics). A mérési adatok kezeléséről az adatkezelők tudnak részletes felvilágosítást nyújtani.\x3c\/p\x3e\n\x3cp\x3eElérhetőségük: \x3ca href=\x22http:\/\/www.google.com\/analytics\/\x22target=\x22_blank\x22\x3ewww.google.com\/analytics\x3c\/a\x3e.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eA cookie-k használatáról (más néven sütik) \x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA szolgáltatás egyes részeinek használatakor az adatkezelő a honlap látogatójával közvetlenül kapcsolatba nem hozható adatokat is tartalmazó adatfájlokat (cookie) telepít a felhasználó számítógépére adatfeljegyzés, a felhasználó azonosítása, a felhasználó további látogatásainak megkönnyítése, a szolgáltatás hatékonyságának növelése céljából. Az adatfájlok használatának eredményeképpen az üzemeltetőhöz került adatokat az üzemeltető nem kapcsolja az adott felhasználó azonosító adataihoz. A látogató böngészőjében, a cookie-k vonatkozásában az alábbi lehetőségeket választhatja:\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cul\x3e\x3cli\x3ebeállíthatja, hogy értesítést kapjon arról, ha az üzemeltető cookie-t kíván elhelyezni a számítógépén,\x3c\/li\x3e\n\x3cli\x3ea cookie-k küldését bármikor megtilthatja.\x3c\/li\x3e\x3c\/ul\x3e\n\x3cbr \/\x3e\n\x3cp\x3eAz adatkezelés célja a maximális kiszolgálás. Az adatkezelő az adatkezelést és tárolást kizárólag előzetes hozzájárulás alapján, annak időtartama alatt, illetőleg a hozzájárulás visszavonásáig végez.\x3c\/p\x3e\n\x3cp\x3eAz oldal egy úgynevezett „session” parancsot használhat annak érdekében, hogy az oldal megőrizze a teszt adatait addig, amíg azok elküldése meg nem történik. Ezt követően a tesztkitöltő személy gépén már ez nem tárolódik. Ez a különbség a session és a cookie-k között, hogy a session azonnal törlődik, amint a felhasználó a böngészőt bezárja. Amennyiben nem zárja be a böngészőt – és nincs speciálisan, saját maga által beállított magasabb időérték, akkor a session alapbeállítás szerint, „nem mozgás esetén” (tehát ha nincs a gépen semmilyen művelet végezve) 1800 másodpercig tárolódik. Azután akkor is törlődik, ha a böngészőt még nem zárta be.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eKülső linkek vagy hivatkozások\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eHonlapunk számos olyan kapcsolódási pontot (linket, hivatkozást) tartalmazhat, amely más szolgáltatók oldalaira vezet. Ezen szolgáltatók adat- és információvédelmi gyakorlatáért az Adatkezelő nem vállal felelősséget.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eHozzáférési, helyesbítési, törlési jogok\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA Felhasználó bármikor tájékoztatást kérhet személyes adatai kezeléséről. A Felhasználó kérelmére az Adatkezelő tájékoztatást ad a kezelt adatokról, az adatkezelés céljáról, jogalapjáról, időtartamáról, az adatfeldolgozó nevéről, címéről (székhelyéről) és az adat kezeléssel összefüggő tevékenységéről, továbbá arról, hogy kik és milyen célból kapják vagy kapták meg az adatokat. A tájékoztatást az Adatkezelő a kérelem benyújtásától számított legrövidebb idő alatt, legfeljebb azonban 30 napon belül írásban adja meg. A kérelmet az Adatkezelő ügyfélszolgálati e-mail címére kell elküldeni. E-mail: \x3ca href=\x22mailto:adatok@tesztkozpont.net\x22\x3eadatok@tesztkozpont.net\x3c\/a\x3e\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA felhasználó az adatok törlését, illetve helyesbítését bármikor kezdeményezheti az erre szolgáló funkciók használatával (pl. hírlevélről történő leiratkozás, adatmódosítás), vagy meg tudja írni ilyen jellegű kérelmét ügyfélszolgálatunk fenti e-mail címére.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eHírlevél szolgáltatás esetén, amennyiben e-mail címéről visszapattannak a küldött levelek, töröljük adatait.\x3c\/p\x3e \n\x3cbr \/\x3e\n\x3ch4\x3eÉrintett jogai és jogérvényesítési lehetőségei\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eÖnnek, mint természetes személynek jogában áll megismernie, illetve szükség esetén módosítania az általunk Önről nyilvántartott adatokat, továbbá jogában áll kérnie, hogy ezeket az adatokat ne használjuk fel. Amennyiben olyan kérdése van, amelyre a honlap Adatvédelem fejezetében nem kap választ, kérjük, küldje el az \x3ca href=\x22mailto:adatok@tesztkozpont.net\x22\x3eadatok@tesztkozpont.net\x3c\/a\x3e címre. A jogosultaknak, akiknek a személyes adatait kezeljük, a fenti elérhetőségek állnak rendelkezésre, amennyiben a törvényben biztosított jogaikkal élni kívánnak. \x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eBírósági jogérvényesítés\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA Felhasználó személyes adatok védelméhez fűződő jogának megsértése esetén az Adatkezelő ellen bírósághoz fordulhat.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eAz adatvédelmi biztos vizsgálata\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA magyarországi adatkezelővel kapcsolatban az Avtv. 27. §-a alapján bárki az adatvédelmi biztoshoz fordulhat, ha véleménye szerint személyes adatainak kezelésével kapcsolatban jogsérelem érte, vagy annak közvetlen veszélye fennáll, kivéve ha az adott ügyben bírósági eljárás van folyamatban. Az adatvédelmi biztoshoz tett bejelentése miatt senkit sem érhet hátrány. A bejelentőt a közérdekű bejelentővel azonos védelem illeti meg. Az adatvédelmi biztoshoz illetékmentesen és formai kötöttség nélkül intézhető beadvány, adatvédelmi biztos honlapja az alábbi címen érhető el: \x3ca href=\x22http:\/\/www.naih.hu\/\x22target=\x22_blank\x22\x3ehttp:\/\/www.naih.hu\x3c\/a\x3e\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eJogorvoslati lehetőségek\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eAz érintett tájékoztatást kérhet személyes adatai kezeléséről, valamint kérheti személyes adatainak helyesbítését, illetve – a jogszabályban elrendelt adatkezelések kivételével – törlését az adatfelvételénél jelzett módon.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eAz érintett kérelmére a magyarországi Adatkezelő mint adatkezelő tájékoztatást ad az általa kezelt, illetőleg az általa megbízott feldolgozó által feldolgozott adatairól, az adatkezelés céljáról, jogalapjáról, időtartamáról, az adatfeldolgozó nevéről, címéről (székhelyéről) és az adatkezeléssel összefüggő tevékenységéről, továbbá arról, hogy kik és milyen célból kapják vagy kapták meg az adatokat. Az adatkezelő a kérelem benyújtásától számított legrövidebb idő alatt, legfeljebb azonban 30 napon belül írásban, közérthető formában adja meg a tájékoztatást. E tájékoztatás ingyenes, ha a tájékoztatást kérő a folyó évben azonos területre vonatkozó tájékoztatási kérelmet az adatkezelőhöz még nem nyújtott be. Egyéb esetekben az Adatkezelő költségtérítést állapít meg.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA magyarországi Adatkezelő a személyes adatot törli, ha kezelése jogellenes, az érintett kéri, az adatkezelés célja megszűnt, vagy az adatok tárolásának törvényben meghatározott határideje lejárt, azt a bíróság vagy az adatvédelmi biztos elrendelte, és ugyanezt a kérést továbbítja az USA-beli adatkezelőnek is.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA magyarországi Adatkezelő a helyesbítésről és a törlésről az érintettet, továbbá mindazokat értesíti, akiknek korábban az adatot adatkezelés céljára továbbították. Az értesítést mellőzi, ha ez az adatkezelés céljára való tekintettel az érintett jogos érdekét nem sérti.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eAz érintett tiltakozhat személyes adatának kezelése ellen, ha\x3c\/p\x3e\n \x3col\x3e\x3cli\x3ea személyes adatok kezelése (továbbítása) kizárólag az adatkezelő vagy az adatátvevő jogának vagy jogos érdekének érvényesítéséhez szükséges, kivéve, ha az adatkezelést törvény rendelte el;\x3c\/li\x3e\n\x3cli\x3ea személyes adat felhasználása vagy továbbítása közvetlen üzletszerzés, közvélemény-kutatás vagy tudományos kutatás céljára történik;\x3c\/li\x3e\n\x3cli\x3ea tiltakozás jogának gyakorlását egyébként törvény lehetővé teszi.\x3c\/li\x3e\n\x3cbr \/\x3e\n\x3cp\x3eA magyarországi Adatkezelő – az adatkezelés egyidejű felfüggesztésével – a tiltakozást a kérelem benyújtásától számított legrövidebb időn belül, de legfeljebb 15 nap alatt megvizsgálja, és annak eredményéről a kérelmezőt írásban tájékoztatja. Amennyiben a tiltakozás indokolt, az adatkezelő az adatkezelést – beleértve a további adatfelvételt és adattovábbítást is – megszünteti, és az adatokat zárolja, valamint a tiltakozásról, illetőleg az annak alapján tett intézkedésekről értesíti mindazokat, akik részére a tiltakozással érintett személyes adatot korábban továbbította, és akik kötelesek intézkedni a tiltakozási jogérvényesítése érdekében.\x3c\/p\x3e\n\x3cp\x3eAmennyiben az érintett az adatkezelőnek a meghozott döntésével nem ért egyet, az ellen – annak közlésétől számított 30 napon belül – bírósághoz fordulhat.\x3c\/p\x3e\n\x3cp\x3eA magyarországi Adatkezelő az érintett adatát nem törölheti, ha az adatkezelést törvény rendelte el. Az adat azonban nem továbbítható az adatátvevő részére, ha az adatkezelő egyetértett a tiltakozással, illetőleg a bíróság a tiltakozás jogosságát megállapította.\x3c\/p\x3e\n\x3cp\x3eAz érintett a jogainak megsértése esetén az adatkezelő ellen bírósághoz fordulhat. A bíróság az ügyben soron kívül jár el.\x3c\/p\x3e\n\x3cp\x3eAz Adatkezelő az érintett adatainak jogellenes kezelésével vagy a technikai adatvédelem követelményeinek megszegésével másnak okozott kárt megtéríti. Az adatkezelő mentesül a felelősség alól, ha a kárt az adatkezelés körén kívül eső elháríthatatlan ok idézte elő.\x3c\/p\x3e\n\x3cp\x3eNem téríti meg a kárt annyiban, amennyiben az a károsult szándékos vagy súlyosan gondatlan magatartásából származott.\x3c\/p\x3e\n\x3cp\x3eJogorvoslati lehetőséggel, panasszal az Adatvédelmi Biztos irodájánál lehet élni a magyarországi Adatkezelővel kapcsolatban:\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eNév: Adatvédelmi Biztos Hivatala\x3c\/p\x3e\n\x3cp\x3eSzékhely: 1051 Budapest, Nádor u. 22.\x3c\/p\x3e\n\x3cp\x3ePostacím: 1387 Budapest, Pf.: 40.\x3c\/p\x3e\n\x3cp\x3eTelefon: 06-1-475-7186, 475-7100\x3c\/p\x3e\n\x3cp\x3eTelefax: 06-1-269-3541\x3c\/p\x3e\n\x3cp\x3eE-mail: \x3ca href=\x22mailto:adatved@obh.hu\x22\x3eadatved@obh.hu\x3c\/a\x3e\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cbr \/\x3e\n\x3cp\x3e\x3cb\x3eA FELHASZNÁLÓ FENTI ADATVÉDELMI TÁJÉKOZTATÓ VÉGIGOLVASÁSA UTÁN KIJELENTI, HOGY AZT MEGÉRTETTE ÉS TELJES TÁJÉKOZTATÁST KAPOTT A VELE KAPCSOLATOS ADATOK KÖRÉRŐL, CÉLJÁRÓL, JOGALAPJÁRÓL ÉS IDŐTARTAMÁRÓL. TOVÁBBÁ TÁJÉKOZTATVA LETT, MIND A JOGAIRÓL ÉS JOGORVOSLATI LEHETŐSÉGEIRŐL. A FELHASZNÁLÓ AZ ADATVÉDELMI TÁJÉKOZTATÓ ELFOGADÁSÁVAL HOZZÁJÁRUL A FENTI ADATAI KEZELÉSÉHEZ.\x3c\/b\x3e\x3c\/p\x3e\n\x3cp\x3e\x3cb\x3eAMENNYIBEN NEM KÍVÁNJA MEGADNI A HOZZÁJÁRULÁST, CSAK ZÁRJA BE AZ OLDALT, ÉS A MEGADOTT ADATAI TÖRLŐDNEK. \x3c\/b\x3e\x3c\/p\x3e\n\x3cbr \/\x3e\n\n\x3cp\x3eCopyright 2013 Church of Scientology Europe.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cbr \/\x3e\n\n\x3c\/div\x3e\n',
+            'Elfogadom',
+            'FOLYTATÁS',
+        ],
+        it: [
+            'Scorri verso il basso e leggi questo documento. Fai un visto sul riquadro “Io acconsento” e clicca sul pulsante per accettare.',
+            '\x3cdiv class=\x22legal-special\x22\x3e\x3ch4 align=\x22center\x22\x3eChiesa di Scientology\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eAcconsento a che il mio nome, il mio indirizzo, la data del test, le risposte che fornirò alle domande del test e i risultati di questo test vengano conservate su copia cartacea e in formato elettronico da codesta Chiesa di Scientology ai fini della valutazione del test, in modo che in seguito mi possa essere fornita consulenza spirituale da parte dei membri della Chiesa stessa. Comprendo e accetto che le informazioni che mi vengono richieste, compresi i cosiddetti dati sensibili, sono necessarie ai fini dell’esecuzione di questo test e della successiva valutazione e consulenza. I dati saranno forniti solo ed esclusivamente da me personalmente; in tal modo avrò il completo controllo della natura e dell’entità dei dati. I dati verranno poi trattati in conformità con il D.lgs. n. 196\/2003 Codice in materia di protezione dei dati. L’unica conseguenza al mio rifiuto di conferire i dati sarà una valutazione incompleta e non adeguata del test; pertanto non potrò ricevere la consulenza che altrimenti mi sarebbe stata fornita. Mi è stato assicurato che i dati del test non verranno divulgati a terzi (a meno che, in una fase successiva, non me ne verrà richiesta l’autorizzazione) e che saranno utilizzati solo dalla Chiesa di Scientology per i fini sopra indicati, e acconsento al trattamento di questi dati per quegli scopi. Acconsento inoltre alla divulgazione e all’uso dei miei dati personali, compreso il fatto che ho eseguito questo test, in formato elettronico (elenco), allo scopo di ricevere ulteriori informazioni da parte della Chiesa di Scientology e di altri enti appartenenti alla Chiesa di Scientology internazionale.\x3c\/p\x3e\x3c\/div\x3e',
+            'Io Acconsento',
+            'Continua',
+        ],
+        no: [
+            '',
+            '\x3cdiv class=\x22legal-special\x22\x3e\n        \x3cp\x3e\x3cb\x3eMERKNAD:\x3c\/b\x3e Disse avgitte opplysningene oppbevares av Church of Scientology Europe og\/eller Scientology Kirken Oslo for å kunne gi deg testresultatet og informasjon om andre mulige tjenesteytelser. Alle tester slettes senest ett år etter utfyllelsesdatoen eller senest ett år etter seneste kontakt. Du kan alltid få opplyst hvilke opplysninger vi har om deg, og du kan alltid få dem slettet ved å rette henvendelse til oss. Da det ifølge persondataloven krever ditt samtykke, bes du sette ditt kryss nedenfor for å bekrefte at du er enig med dette.\x3c\/p\x3e\n\t\t\x3cbr \/\x3e\n\t\t\x3cp\x3eDatatilsynet er tilsynsførende myndighet med hensyn til behandling av personopplysninger. Du kan lese mer om retningslinjene på \x3ca href=\x22http:\/\/www.datatilsynet.no\/\x22 target=\x22_blank\x22\x3e www.datatilsynet.no\x3c\/a\x3e.\x3c\/p\x3e\x3c\/div\x3e',
+            'Jeg bekrefter at jeg er enig med dette.',
+            'Fortsette',
+        ],
+        pt: [
+            'Por favor, role e leia este documento. Marque na caixa «Eu\x26nbsp;concordo» e faça clique no botão aceitar.',
+            '\x3cdiv class=\x22legal-special\x22\x3e\x3ch4 align=\x22center\x22\x3eIgreja de Scientology da Europa.\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cbr \/\x3e\n\x3cp\x3eQuero participar no teste de personalidade conhecido como o teste de OCA da Igreja de Scientology mundial, à qual a Igreja de Scientology da Europa pertence.\x3cp\x3e\n\x3cbr \/\x3e\n\x3cp\x3eLi a informação no website «Análise de Capacidade Oxford (OCA)» e compreendo completamente a natureza, significância e importância deste teste. Percebo que o teste não é um teste médico ou fisiológico mas uma ferramenta especial da Igreja de Scientology relacionada com os ensinos espirituais do seu fundador, L.\x26nbsp;Ron\x26nbsp;Hubbard. Li também e compreendo esta declaração. Tendo reflectido sobre isto, decidi de livre vontade no meu pedido para fazer o teste.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eConsentimento de Protecção de Dados\/Privacidade:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eConsente ter o seu nome, detalhes de contacto, a data do teste, as respostas que deu ao responder o teste, e os resultados deste teste, mantidos em papel e na forma computadorizada pela Igreja de Scientology da Europa para o propósito da avaliação do teste, para que lhe possa ser providenciado depois com a sua orientação espiritual pelos membros da Igreja de Scientology local na sua área. A informação que lhe está a ser pedida para providenciar é necessária para levar adiante este teste e esta avaliação e orientação. Os dados serão obtidos directamente de si, e apenas de si, pelo que permanece completamente em controlo da natureza e extensão dos dados. Pode parar o teste em qualquer altura. As suas respostas ao teste são enviadas apenas para a Igreja de Scientology da Europa se completar o teste na totalidade. A única consequência para si de não ter providenciado qualquer dos dados requeridos no teste seria que o teste não poderia ser avaliado na totalidade ou apropriadamente, e que, portanto, não lhe seria providenciada a orientação que receberia de contrário.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eAs respostas que dá no formulário do teste serão avaliadas pela Igreja de Scientology da Dinamarca ou uma Igreja de Scientology local com a ajuda de um programa computadorizado que produz uma tabela gráfica dos resultados («o gráfico»).  O gráfico e os seus detalhes de contacto serão enviados automaticamente para uma Igreja de Scientology local na sua área.  As suas respostas ao teste também podem ser transmitida para a mesma Igreja de Scientology.  Membro do staff qualificado desta Igreja de Scientology pode usar o gráfico para o ajudar a compreender-se a si mesmo, como descrito no folheto «O Teste de Análise de Capacidade Oxford (OCA)».  O gráfico e respostas do teste serão apagadas após 3 meses o mais tardar, se não tiver demonstrado mais interesse na orientação espiritual pela Igreja de Scientology ou se pedir para que as apaguemos antes desses 3 meses.  Não serão enviados para nenhuma outra entidade.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eOs seus detalhes de contacto só podem ser usados para o contactar sobre a avaliação do teste e para lhe providenciar informação adicional quanto aos seus resultados.\n\x3cbr \/\x3e\n\x3ch4\x3eConsentimento:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eCompreendo e concordo com o acima e consinto para este procedimento dos dados que providencio para os propósitos acima mencionados e para ser contactado pela minha Igreja de Scientology local para esses propósitos, incluindo por e-mail, mensagem de texto e\/ou telefone se tiver providenciado esses detalhes de contacto.  Posso em qualquer momento objectar ao uso adicional dos meus detalhes de contacto ao enviar uma objecção à Igreja de Scientology da Europa.\x3c\/p\x3e\x3c\/div\x3e',
+            'Eu concordo',
+            'Continue',
+        ],
+        es_ES: [
+            'Por favor desplaza hacia abajo y lee este documento.  Marca el recuadro \x22Estoy de Acuerdo\x22 y haz clic al botón para aceptar.',
+            '\x3cdiv class=\x22legal-special\x22\x3e\x3ch4 align=\x22center\x22\x3eIglesia de Scientology de Europa\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cbr \/\x3e\n\x3cp\x3eQuiero participar en el test de personalidad conocido a nivel mundial como el test OCA de la Iglesia de Scientology, a la que pertenece la Iglesia de Scientology de Europa.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eHe leido la información sobre el \x22Test de Análisis de Capacidad Oxford (OCA) en la página web, y entiendo totalmente la naturaleza, el significado y la importancia de este test.  Me doy cuenta de que el test no es un examen médico o psicológico, sino una herramienta especial de la Iglesia de Scientology, en relación con las enseñanzas espirituales de su fundador, L. Ronald Hubbard.  También he leído y entiendo esta declaración.  Después de haber reflexionado sobre ello, he decidido libremente sobre mi solicitud de hacer el test.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eProtección de datos:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eDas tu consentimiento para que tu nombre, datos de contacto, fecha del test, las respuestas que das al hacer el test, y los resultados de este test, llevado a cabo en papel y en soporte electrónico por la Iglesia de Scientology de Europa con el fin de evaluar el test, de modo que a partir de entonces puedas recibir la guía espiritual por parte de los miembros de la Iglesia local de Scientology en tu área.  La información que se te pide proporcionar es necesaria para llevar a cabo este test y su evaluación y guía.  Los datos se obtienen directamente de ti y sólo de ti, por lo que tienes completo control de la naturaleza y el alcance de los datos.  Puedes dejar de hacer el test en cualquier momento. Tus respuestas al test sólo se envían a la Iglesia de Scientology de Europa si se completa el test en su totalidad. La única consecuencia de que no proporciones alguno de los datos solicitados en el test sería que no se puede hacer una evaluación completa o correcta del test, y por ello no puedes recibir la orientación que podrías recibir de otro modo.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eLas respuestas que das en el formulario del test serán evaluadas por la Iglesia de Scientology de Europa o en una Iglesia local de Scientology con la ayuda de un programa informático que produce un cuadro gráfico de los resultados (\x22la gráfica\x22).  La gráfica y los datos de contacto serán enviados automáticamente a una Iglesia local de Scientology en tu área.  Las respuestas de tu test también pueden ser transmitidas a la misma Iglesia de Scientology.  El personal cualificado de la Iglesia de Scientology puede usar la gráfica para ayudarte a entenderte a tí mismo, tal como se describe en el folleto: \x22El Test de Análisis de Capacidad Oxford (OCA)\x22.  La gráfica y las respuestas del test se eliminarán, después de 3 meses como máximo, si no has mostrado interés posterior en la guía espiritual de la Iglesia de Scientology o si pides que se eliminen antes.  El Test y sus resultados no se revelarán a ninguna otra entidad.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eTus datos de contacto únicamente serán utilizados para ponerse en contacto contigo en relación con la evaluación del test y  proporcionarte más información en cuanto a tus resultados.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eConsentimiento:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eEntiendo y estoy de acuerdo con lo anterior y doy consentimiento al procesamiento de los datos que proporciono con los fines antes mencionados y para ser contactado por mi Iglesia de Scientology local para esos fines, que incluye el e-mail, mensaje de texto y\/o por teléfono si he proporcionado los datos de contacto.  En cualquier momento puedo objetar un posterior uso de mis datos de contacto enviando una objección a la Iglesia de Scientology de Europa, o a mi Iglesia de Scientology local. \x3c\/p\x3e\x3c\/div\x3e',
+            'Estoy de acuerdo',
+            'Continúa',
+        ],
+        sv: [
+            'Bläddra neråt och läs detta document. Markera i fältet ”Jag samtycker” och klicka på knappen för att acceptera.',
+            '\x3cdiv class=\x22legal-special\x22\x3e\x3ch4 align=\x22center\x22\x3eChurch of Scientology Europe\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cbr \/\x3e\n\x3cp\x3eJag vill delta i den världsomspännande Scientologi-kyrkans personlighetstest, den som kallas OCA-testet. Church of Scientology Europe ingår i den världsomspännande Scientologi-kyrkan.\x3c\/p\x3e\n\x3cbr \/\x3e\t\n\x3cp\x3eJag har läst informationen på hemsidan för ”Oxford Capacity Analysis (OCA) Test”, och jag förstår till fullo naturen, innebörden och betydelsen av detta test.  Jag inser att testet inte är ett medicinskt eller psykologiskt test, utan ett särskilt verktyg som Scientologi-kyrkan använder och som har att göra med dess grundare L. Ron Hubbards andliga läror.  Jag har också läst och förstått denna deklaration.  Efter att ha tänkt över saken har jag beslutat att på egen begäran göra testet.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eDataskydd:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eDu samtycker till att ha ditt namn, dina kontaktuppgifter, datumet för testet, de svar du ger i respons på testet, och resultatet från detta test, förvarade på papper och i elektronisk form av Church of Scientology Europe i syfte att utvärdera testet, så att du därefter kan ges andlig vägledning av medlemmarna i den lokala Scientologi-kyrkan i ditt område.  De uppgifter du ombeds ge är nödvändiga för att genomföra detta test och denna utvärdering och vägledning.  Uppgifterna kommer att erhållas direkt från dig, och bara från dig, så att du förblir i full kontroll över karaktären och omfattningen av dessa uppgifter.  Du kan avbryta testet när som helst.  Dina svar på testet skickas endast till Church of Scientology Europe om du slutför testet.  Den enda följden för dig av att inte tillhandahålla någon av de uppgifter som begärs i testet, blir att testet inte kan bli helt eller korrekt utvärderat, och att du därför inte kan erhålla den vägledning du annars skulle kunna få.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eDe svar du ger på testformuläret kommer att utvärderas av Scientologi-kyrkan Danmark eller en lokal Scientologi-kyrka med hjälp av ett datoriserat program som skapar ett diagram av resultatet (”grafen”).  Grafen och dina kontaktuppgifter skickas automatiskt till en lokal Scientologi-kyrka i ditt område.  Dina testsvar kan också komma att överföras till samma Scientologi-kyrka.  Kvalificerad personal vid denna Scientologi-kyrka kan använda grafen för att hjälpa dig att förstå dig själv, vilket beskrivs i broschyren ”Oxford Capacity Analysis (OCA) Test”.  Grafen och testsvaren kommer att raderas senast efter 3 månader, om du inte har visat fortsatt intresse för andlig vägledning från Scientologi-kyrkan eller om du ber att få dem utraderade tidigare.  De kommer inte att lämnas ut till någon annan enhet.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3cp\x3eDina kontaktuppgifter kommer endast att användas för att kontakta dig angående utvärderingen av testet och förse dig med ytterligare information om dess resultat.\x3c\/p\x3e\n\x3cbr \/\x3e\n\x3ch4\x3eSamtycke:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eJag förstår och samtycker till det ovanstående och samtycker till denna behandling av de uppgifter jag ger i ovanstående syften och att jag kontaktas av min lokala Scientologi-kyrka i dessa syften, bland annat genom email, sms och\/eller telefon, om jag har gett dessa kontaktuppgifter.  Jag kan när som helst motsätta mig fortsatt användning av mina kontaktuppgifter genom att skicka en invändning till Church of Scientology Europe, eller till min lokala Scientologi-kyrka.\x3c\/p\x3e\x3c\/div\x3e',
+            'Jag samtycker',
+            'Fortsätt',
+        ],
+        ru: [
+            'Пожалуйста, прокрутите вниз этот документ и прочитайте его. Установите флажок «Я принимаю условия» ​​и нажмите кнопку «Продолжить».\n',
+            '\x3cdiv class=\x22legal-special\x22\x3e\x3ch4 align=\x22center\x22\x3eСогласие на обработку персональных данных\x3c\/h4\x3e\n\n\x3cp\x3eЗаполняя представленный на настоящем интернет-сайте тест, называющийся «Оксфордский тест анализа личности», вводя свои персональные данные при его заполнении и проставляя галочку в графу о даче согласия на предоставление персональных данных, я тем самым даю согласие на обработку (любые действия и операции или совокупность действий и операций, совершаемых с использованием средств автоматизации или без использования таких средств, включая сбор, запись, систематизацию, накопление, хранение, уточнение [обновление, изменение], извлечение, использование, передачу [распространение, предоставление, доступ], обезличивание, блокирование, удаление, уничтожение) всех представленных мной персональных данных Международной Церкви Саентологии (Church of Scientology International), адрес: 6130 Sheila St, Commerce, CA 90040 USA, а также даю ей право и возможность получать и обрабатывать предоставляемые мной персональные данные на изложенных ниже условиях.\x3c\/p\x3e\n\x3cp\x3eПод «персональными данными» имеются в виду имя (фамилия, имя и отчество), дата рождения\/возраст, почтовый и\/или электронный адрес, номер телефона и другие контактные данные, а также, при указании – политические взгляды, философские и религиозные убеждения. \x3c\/p\x3e\n\x3cp\x3eЦелью, для достижения которой даётся согласие, является обработка данных моего теста и выдача рекомендаций по его результатам, извещение о событиях и новостях деятельности указанной в настоящем согласии организации и группы, а также связанных с ней других саентологических организаций.\x3c\/p\x3e\n\x3cp\x3eСрок действия согласия – до его отзыва субъектом персональных данных.\x3c\/p\x3e\n\x3cp\x3eСогласие может быть отозвано путём направления письменного отзыва на указанные адреса.\x3c\/p\x3e\n\x3cp\x3eМне понятно, что при нежелании предоставлять согласие на обработку своих персональных данных я свободен в том, чтобы не заполнять тест и не указывать свои данные. \x3c\/p\x3e\n\x3c\/div\x3e\n',
+            'Я принимаю условия',
+            'Продолжить',
+        ],
+        he: [
+            'גלול למטה בבקשה וקרא מסמך זה. סמן את התיבה \x22אני מסכים\x22 ולחץ על הכפתור כדי לאשר.',
+            '\x3cdiv class=\x22legal-special\x22\x3e\n\n\t\x3ch4 align=\x22center\x22\x3eארגון הסיינטולוגיה אירופה\x3c\/h4\x3e\n\t\x3cbr \/\x3e\x3cbr \/\x3e\n\x3cp\x3eאני מעוניין להשתתף במבדק אישיות הידוע כמבחן OCA של ארגון הסיינטולוגיה העולמי, אליה שייך ארגון הסיינטולוגיה באירופה.\x3c\/p\x3e\n\n\x3cp\x3eקראתי את המידע על מבחן \x22ניתוח היכולת של אוקספורד (OCA)\x22 באתר, ואני מבין לגמרי את האופי, המשמעות והחשיבות של מבחן זה.  אני מבין כי המבחן איננו רפואי או פסיכולוגי, אלא כלי מיוחד של ארגון הסיינטולוגיה, הקשור ללימוד הכתבים של מייסדה, ל. רון האברד.  בנוסף, קראתי והבנתי הצהרה זו ואחרי שחשבתי על כך, החלטתי מרצוני החופשי לעשות את המבחן.\x3c\/p\x3e\n\x3cbr \/\x3e\n\n\x3ch4\x3eמדיניות בנוגע לפרטיות:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eאתה מסכים בזאת לתת את שמך, פרטים ליצירת קשר, הנתונים של המבחן, התשובות שאתה נותן במבחן ואת תוצאות המבחן אשר ישמרו  על-גבי נייר או באופן ממוחשב על-ידי ארגון הסיינטוולוגיה באירופה למטרות ההערכה של המבחן, כך שלאחר מכן תוכל לקבל הדרכה רוחנית על-ידי חברי צוות בארגון סיינטולוגיה באזורך.  המידע שאתה מתבקש לספק הוא הכרחי בכדי לבצע את המבחן, ההערכה וההדרכה. הנתונים מתקבלים ישירות ממך, ורק ממך, כך שאתה נשאר בשליטה מלאה על אופי והיקף הנתונים. אתה יכול להפסיק את המבחן בכל שלב. תשובותיך למבחן יישלחו לארגון הסיינטולוגיה באירופה, רק במידה  ותשלים את המבחן במלואו. התוצאה היחידה שיכולה להיות באם לא תספק אילו מהנתונים המתבקשים במבחן, תהיה חוסר יכולת להעריך את המבחן כהלכה, ואתה עלול לא לקבל את ההדרכה שניתן היה לספק לך עם נתונים מלאים.\x3c\/p\x3e\n\n\x3cp\x3eהתשובות שאתה מספק בטופס המבחן יעברו הערכה על-ידי ארגון הסיינטולוגיה בדנמרק או על-ידי ארגון סיינטולוגיה מקומי בעזרת תוכנה ממוחשבת המספקת תרשים גרפי של התוצאות (\x22הגרף\x22). הגרף ופרטי ההתקשרות שלך יישלחו אוטומטית לארגון סיינטולוגיה באזורך. תוצאות המבחן שלך יכולות להישלח גם לאותו ארגון סיינטולוגיה. חברי צוות מוסמכים באותו ארגון סיינטולוגיה יכולים להשתמש בגרף כדי לעזור לך להבין את עצמך, כפי שתואר בעלון המבחן \x22ניתוח היכולת של אוקספורד (OCA)\x22. הגרף ותוצאות המבחן יימחקו לאחר שלושה חודשים לכל המאוחר, אם לא הראית עניין נוסף בהדרכה הרוחנית של ארגון הסיינטולוגיה, או באם תבקש שאלו יימחקו מוקדם יותר. הם לא ייחשפו לכל גוף אחר.\x3c\/p\x3e\n\n\x3cp\x3eפרטי ההתקשרות שלך יהיו בשימוש אך ורק ליצירת קשר אתך כדי לתת לך את תוצאות המבחן ובכדי לספק לך מידע נוסף.\x3c\/p\x3e\n\x3cbr \/\x3e\n\n\x3ch4\x3eהסכמה:\x3c\/h4\x3e\n\x3cbr \/\x3e\n\x3cp\x3eאני מבין ומסכים עם האמור לעיל ולעיבוד הנתונים שאספק עבור הסיבות המוזכרות לעיל וליצירת קשר אתי על-ידי ארגון הסיינטולוגיה באזורי למטרות אלו, לרבות על-ידי אי מייל, מסרונים או באמצעות טלפון, ככל שסיפקתי פרטי התקשרות אלו. בכל רגע נתון אני יכול להתנגד להמשך השימוש בפרטי ההתקשרות שלי על-ידי שליחת בקשה להסרה לארגון הסיינטולוגיה אירופה או לארגון הסיינטולוגיה באיזורי.\x3c\/p\x3e\x3c\/div\x3e',
+            'אני מסכים',
+            '‏המשך',
+        ],
+
+    }
+
+    function changeLegalNoticeLocale(loc) {
+        $('#legal_disclaimer .modal-title').html(legal_notices[loc][0]);
+        $('#legal_disclaimer .legal-body').html(legal_notices[loc][1]);
+        $('#legal_disclaimer [name="legal-agreement"]').val(legal_notices[loc][2]);
+        $('#legal_disclaimer .eu-start-button').html(legal_notices[loc][3]);
+    }
+
+    function initAffix() {
+        if($(window).width() <= 550) {
+            $('#oca_form').affix({
+                offset: {
+                    top: function () {
+                        return getOffsetTop($('[name="oca_start_form_marker"]')[0]) - $(window).height() + 100;
+                    }
+                }
+            });
+        } else {
+            $('#oca_form').affix({
+                offset: {
+                    topEl: $('.test-main'),
+                    topMargin: parseInt($('#oca_form').css('margin-top')),
+                    top: function () {
+                        return this.topEl.offset().top - this.topMargin;
+                    },
+                    bottomEl: $('.footer-legal'),
+                    bottomMargin: parseInt($('#oca_form').css('margin-bottom')),
+                    bottom: function () {
+                        return this.bottomEl.outerHeight(true);
+                    }
+                }
+            });
+        }
+    }
+
+    $('#oca_form').click(function(event) {
+        if($(window).width() <= 550 && $(this).hasClass('affix-top')) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            $("html, body").animate({ scrollTop: $('[name=oca_start_form_marker]').offset().top }, 500);
+            $('#fname').focus();
+        }
+    });
+
+    $('[href="#oca_start_form_marker"]').click(function(event) {
+        $("html, body").animate({ scrollTop: $('[name=oca_start_form_marker]').offset().top }, 500);
+        $('#fname').focus();
+    });
+
+
+    function getOffsetTop( elem )
+    {
+        var offsetTop = 0;
+        do {
+          if ( !isNaN( elem.offsetTop ) )
+          {
+              offsetTop += elem.offsetTop;
+          }
+        } while( elem = elem.offsetParent );
+        return offsetTop;
+    }
+
+    $(window).resize(initAffix);
+
+    window.addEventListener("orientationchange", initAffix);
+
+    initAffix();
+
+
+
+    $.getScript('/theme/polyfill/polyfiller.js', function() {
+
+
+        webshim.setOptions('basePath', '/theme/polyfill/shims/');
+        webshim.polyfill('forms');
+    });
+
+
+
+    function loadJS(src, cb) {
+        var ref = window.document.getElementsByTagName( "script" )[ 0 ];
+        var script = window.document.createElement( "script" );
+        script.src = src;
+        script.async = true;
+        ref.parentNode.insertBefore( script, ref );
+        if (cb && typeof(cb) === "function") {
+            script.onload = cb;
+        }
+        return script;
+    }
+
+    var scripts = 2;
+
+    loadJS("/theme/cleave/cleave.min.js", loadCallback);
+    loadJS("/theme/cleave/cleave-phone.i18n.js", loadCallback);
+
+    function loadCallback() {
+        scripts--;
+        if(scripts == 0) {
+            var cl = new Cleave('.phone-input', {
+                phone: true,
+                phoneRegionCode: $('[name="country"]').val()
+            });
+
+            $('[name="country"]').change(function(event) {
+                cl.destroy();
+                cl = new Cleave('.phone-input', {
+                    phone: true,
+                    phoneRegionCode: $('[name="country"]').val()
+                });
+            });
+        }
+    }
+
+
+        </script>
+
+
+
+    </body>
+    </html>*@
+
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+        <div class="jumbotron text-center">
+            <h1>My First Bootstrap Page</h1>
+            <p>Resize this responsive page to see the effect!</p>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Column 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Column 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Column 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    </html>*@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <SCRIPT src="/Scripts/Main.js"></SCRIPT>
+    <SCRIPT src="/Scripts/LogIn.js"></SCRIPT>
+    <SCRIPT src="/Scripts/Registro.js"></SCRIPT>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <link rel="stylesheet" href="/Content/css/bootstrap.min.css">
+    <script>
+        var Encuesta = {};
+        Encuesta.Main = new Main();
+        Encuesta.LogIn = new LogIn();
+        Encuesta.Registro = new Registro(true);
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="header1">
+            <div class="logo">
+                <img src="http://survey.aasoftware.mx/img/logoSperto3.png" />
+            </div>
+        </div>
+        <div class="contenido">
+            @*<div class="imagen">
+                <img src="/Content/img/nuevaForm.jpg">
+                
+            </div>*@
+            <div class="formulario">
+                <div class="signup-form">
+                    <form>
+                        <h2>Registrar</h2>
+                        <p class="hint-text">Crea tu cuenta para realizar la encuesta. Solo te tomara unos minutos.</p>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-6"><input id="nombre" type="text" class="form-control required" name="first_name" placeholder="Nombres" onkeyup="Encuesta.Registro.removerRequired()"></div>
+                                <div class="col-xs-6"><input id="apellido" type="text" class="form-control required" name="last_name" placeholder="Apellidos" onkeyup="Encuesta.Registro.removerRequired()"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input id="edad" type="text" class="form-control required" name="edad" placeholder="Edad" onkeyup="Encuesta.Registro.removerRequired()">
+                        </div>
+                        <div class="form-group">
+                            <label for="Genero" class="subTitulo">Género:</label>
+                            <label for="Genero">Hombre:</label>
+                            <label for="Genero">Mujer:</label>
+                            <input type="radio" name="gender" value="h" id="genero" class="required">
+                            <input type="radio" name="gender" value="m" id="genero" class="required">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="Pais">País:</label>
+                            <select>
+                                <option value="1" id="pais">Mexico</option>
+                                <option value="2" id="pais">Colmmbia</option>
+                                <option value="3" id="pais">Estados Unidos</option>
+                                <option value="4" id="pais">Canada</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input id="cp" type="text" class="form-control required" name="cp" placeholder="Codigo Postal" onkeyup="Encuesta.Registro.removerRequired()">
+                        </div>
+                        <div class="form-group">
+                            <input id="email" type="email" class="form-control required" name="email" placeholder="Correo" onkeyup="Encuesta.Registro.removerRequired()">
+                        </div>
+                        <div class="form-group">
+                            <input id="mobile" type="text" class="form-control required" name="mobile" placeholder="Telefono" onkeyup="Encuesta.Registro.removerRequired()">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-inline"><input type="checkbox"> Acepto <a href="#">Los terminos de uso</a> &amp; <a href="#">Politicas de privacidad</a></label>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" onclick="Encuesta.Registro.GuardarRegistro();" class="btn btn-success btn-lg btn-block">Continuar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- <SCRIPT src="js/jquery.min.js"></SCRIPT>  -->
+    <script>
+
+
+
+    </script>
+</body>
+<style>
+    body {
+        font-family: Georgia;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contenedor {
+        width: 100%;
+        background-color: #fff;
+    }
+
+        .contenedor .header1 {
+            width: 100%;
+            background: #C9AA5D;
+        }
+            .contenedor .header1 .logo{
+                width: 10%;
+                margin: 0 auto;
+            }
+            .contenedor .header1 .logo img{
+                width: 100%;
+            }
+
+
+            .contenedor .contenido {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            /*.contenedor .contenido .imagen {
+                width: 40%;
+                float: left;
+            }*/
+
+                /*.contenedor .contenido .imagen h2 {
+                    width: 100%;
+                    padding: 15px;
+                    text-align: center;
+                }*/
+
+                /*.contenedor .contenido .imagen img {
+                    width: 100%;
+                    height: 600px;
+                }*/
+
+            .contenedor .contenido .formulario {
+                width: 50%;
+                
+                margin: 0 auto;
+            }
+
+                .contenedor .contenido .formulario form {
+                    width: 100%;
+                }
+
+                    .contenedor .contenido .formulario form .secciones {
+                        width: 100%;
+                    }
+
+                        .contenedor .contenido .formulario form .secciones .subTitulo {
+                            width: 100%;
+                        }
+
+                        .contenedor .contenido .formulario form .secciones input {
+                            width: 100%;
+                        }
+
+                    .contenedor .contenido .formulario form .button {
+                        width: 80%;
+                    }
+
+    .form-control {
+        height: 100%;
+        box-shadow: none;
+        color: #969fa4;
+    }
+
+        .form-control:focus {
+            border-color: #5cb85c;
+        }
+
+    .form-control, .btn {
+        border-radius: 3px;
+    }
+
+    .signup-form {
+        width: 100%;
+        padding: 15px;
+    }
+
+        .signup-form h2 {
+            color: #636363;
+            margin: 0 0 15px;
+            position: relative;
+            text-align: center;
+        }
+
+            .signup-form h2:before, .signup-form h2:after {
+                content: "";
+                height: 2px;
+                width: 30%;
+                background: #d4d4d4;
+                position: absolute;
+                top: 50%;
+                z-index: 2;
+            }
+
+            .signup-form h2:before {
+                left: 0;
+            }
+
+            .signup-form h2:after {
+                right: 0;
+            }
+
+        .signup-form .hint-text {
+            color: #999;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .signup-form form {
+            color: #999;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            background: #f2f3f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .signup-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .signup-form input[type="checkbox"] {
+            margin-top: 3px;
+        }
+
+        .signup-form .btn {
+            font-size: 16px;
+            font-weight: bold;
+            min-width: 140px;
+            outline: none !important;
+        }
+
+        .signup-form .row div:first-child {
+            padding-right: 10px;
+        }
+
+        .signup-form .row div:last-child {
+            padding-left: 10px;
+        }
+
+        .signup-form a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+            .signup-form a:hover {
+                text-decoration: none;
+            }
+
+        .signup-form form a {
+            color: #5cb85c;
+            text-decoration: none;
+        }
+
+            .signup-form form a:hover {
+                text-decoration: underline;
+            }
+</style>
+</html>
+

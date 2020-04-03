@@ -1,0 +1,75 @@
+﻿@model EncuestaV2.Data.Certezas
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<h3>Estas seguro de eliminar esto?</h3>
+<div>
+    <h4>Tópico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.AreaConocimiento)*@
+            Área de conocimiento
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaConocimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reactivos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reactivos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorUnitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorUnitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Factor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Factor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Eliminar" class="btn btn-primary" /> |
+        <a href="/certezas"><i class="fa fa-arrow-circle-left"></i>Regresar</a>
+    </div>
+    }
+</div>

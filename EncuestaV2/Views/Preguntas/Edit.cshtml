@@ -1,0 +1,106 @@
+﻿@model EncuestaV2.Models.Preguntas
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@*<h2>Edit</h2>*@
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Preguntas</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.IDPregunta)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Texto, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Texto, new { htmlAttributes = new { @class = "form-control", required="required" } })
+            @Html.ValidationMessageFor(model => model.Texto, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Activo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Activo)
+                @Html.ValidationMessageFor(model => model.Activo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.IdCerteza, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IdCerteza, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IdCerteza, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.Certeza, "IdCerteza", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IdCerteza", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.certeza, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+
+    @*<div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @Model.Certezas.AreaConocimiento
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            @foreach (var item in Model.Certeza)
+            {
+                <a class="dropdown-item">@item.AreaConocimiento</a>
+            }
+        </div>
+    </div>*@
+
+
+    @{
+        List<SelectListItem> listItems = new List<SelectListItem>();
+        foreach (var item in Model.Certeza)
+        {
+            listItems.Add(new SelectListItem
+            {
+                Text = item.AreaConocimiento,
+                Value = item.IdCerteza.ToString(),
+            });
+
+        }
+    }
+
+    @Html.DropDownListFor(model => model.IdCerteza, listItems, Model.Certezas.AreaConocimiento)
+
+
+
+    @foreach (var item in Model.preguntasRespuestas)
+    {
+        <div class="form-group">
+            Respuesta:
+            <div class="col-md-10">
+                @Html.EditorFor(model => item.Texto, new { htmlAttributes = new { @class = "form-control", required="required" } })
+                @Html.ValidationMessageFor(model => item.Texto, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    <a href="/preguntas"><i class="fa fa-arrow-circle-left ml-4"></i>Regresar</a>
+</div>

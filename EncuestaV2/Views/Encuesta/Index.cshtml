@@ -1,0 +1,113 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TEST</title>
+    <SCRIPT src="/Scripts/Main.js?time=@DateTime.Now"></SCRIPT>
+    <SCRIPT src="/Scripts/LogIn.js?time=@DateTime.Now"></SCRIPT>
+    <SCRIPT src="/Scripts/Registro.js?time=@DateTime.Now"></SCRIPT>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/css/Encuesta.css?time=@DateTime.Now">
+    <script>
+        var Encuesta = {};
+        Encuesta.Main = new Main();
+        Encuesta.LogIn = new LogIn();
+        Encuesta.Registro = new Registro(true);
+    </script>
+</head>
+<style>
+
+
+</style>
+<body>
+    <div class="contenedor">
+        <div class="header1">
+            <div class="logo">
+                @*<img src="~/Content/img/11.png" />*@
+                <img src="~/Content/img/15.png" />
+            </div>
+        </div>
+        <div class="errorCorreo">@ViewBag.Error</div>
+        <div class="contenido col-md-6 col-lg-6 col-lg-offset-3">
+
+            <div class="cont-formu">
+                <div class="signup-form">
+                    <form>
+                        <h2>Test NOVIS</h2>
+                        <p class="hint-text">Captura tus datos para realízar la encuesta. Solo te tomará unos minutós.</p>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <input id="nombre" type="text" class="form-control required" name="first_name" placeholder="Nombre">
+                                </div>
+                                <div class="col-xs-6">
+                                    <input id="apellido" type="text" class="form-control required" name="last_name" placeholder="Apellido">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input id="edad" type="text" class="form-control required" name="edad" placeholder="Edad">
+                        </div>
+                        <div class="form-group">
+                            <label for="Genero" class="subTitulo">Género:</label>
+
+                            <label class="container">
+                                Hombre
+                                <input type="radio" checked="checked" name="radio" value="h" id="genero">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container">
+                                Mujer
+                                <input type="radio" name="radio" value="m" id="genero">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="Pais">País:</label>
+                            <select>
+                                <option value="1" id="pais">Mexico</option>
+                                @*<option value="2" id="pais">Colmmbia</option>
+                                <option value="3" id="pais">Estados Unidos</option>
+                                <option value="4" id="pais">Canada</option>*@
+
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <input id="cp" type="text" class="form-control required" name="cp" placeholder="Empresa">
+                        </div>
+                        <div class="form-group">
+                            <input id="email" type="email" class="form-control required" name="email" placeholder="Correo">
+                        </div>
+                        <div class="form-group">
+                            <input id="mobile" type="text" class="form-control required" name="mobile" placeholder="Telefono">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-inline"><input type="checkbox"> Acepto Los terminos de uso & Politicas de privacidad</label>
+                        </div>
+                        <input type="hidden" id="Link" value="@ViewBag.Link" />
+
+                        <div class="form-group">
+                            <button type="button" onclick="Encuesta.Registro.GuardarRegistro();" class="btn btn-lg btn-block">Continuar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+

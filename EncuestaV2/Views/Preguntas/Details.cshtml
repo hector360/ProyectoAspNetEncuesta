@@ -1,0 +1,43 @@
+﻿@model EncuestaV2.Models.Preguntas
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Preguntas</h4>
+            <div class="row mb-4">
+                @Html.DisplayNameFor(model => model.Certezas.AreaConocimiento):
+                @Html.DisplayFor(model => model.Certezas.AreaConocimiento)
+            </div>
+
+            <div class="row mb-4">    
+                @Html.DisplayNameFor(model => model.IDPregunta):
+                @Html.DisplayFor(model => model.IDPregunta)
+            </div>
+
+            <div class="row mb-4">
+                @Html.DisplayNameFor(model => model.Texto) pregunta:
+                @Html.DisplayFor(model => model.Texto)
+            </div>
+
+            <div class="row mb-4">
+               Respuestas:
+
+            </div>
+                @foreach (var item in Model.preguntasRespuestas)
+                {
+                    <div class="mb-2">
+                        @item.Texto
+                    </div>
+                }
+            
+</div>
+
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IDPregunta }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>

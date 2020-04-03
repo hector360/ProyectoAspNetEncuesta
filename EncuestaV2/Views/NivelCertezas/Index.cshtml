@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EncuestaV2.Data.NivelCertezas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.minimo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maximo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Certezas.AreaConocimiento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.minimo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maximo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Certezas.AreaConocimiento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdNivel }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdNivel }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdNivel })
+        </td>
+    </tr>
+}
+
+</table>

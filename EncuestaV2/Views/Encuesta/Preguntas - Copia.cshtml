@@ -1,0 +1,592 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+@*@RenderPage("~/Views/Shared/_Security.cshtml")*@
+<html lang="es-es" itemscope itemtype="http://schema.org/WebPage">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> Test de Ventas</title>
+    <link rel="stylesheet" href="~/Content/Preguntas/Style.css" />
+    <link rel="stylesheet" href="~/Content/Preguntas/tema.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Preguntas/Preguntas.css">
+
+    <script src="~/Scripts/Preguntas2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <script>
+        var Encuesta = {};
+        Encuesta.Preguntas2 = new Preguntas2(true);
+
+    </script>
+    <style>
+        .activo {
+            display: block;
+        }
+
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="~/Content/img/11.png" />
+            </div>
+            <a href="/" class="logo-touch"></a>
+
+
+
+
+            <div class="title-bar">
+                <h1>AQUí VA EL TIPO DE TEST <span class="hidden-xxs">|</span> <em>CERTEZA</em><span id="timer" class="timerC">90:00</span></h1>
+                <a href="#" class="menu-q">
+                    <span class="pulse"></span>
+                </a>
+                <div class="menu-q-expanation over-expanation"></div>
+            </div>
+
+            <div class="right-holder visible-xxs-block">
+
+
+                <div class="banner-right">
+
+                    <a href="#/">
+                        <span>
+                            <span class="hidden-xs">
+                                Web oficial <br />de Sperto Trainning
+                            </span>
+                        </span>
+                    </a>
+                </div>
+
+
+                <div class="brand-new-share-outer">
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+
+
+        <!--Inicio contenedor preguntas respuestas-->
+        <div class="questions-container gender-male" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+
+            <div></div>
+
+            <div class="icon-fontello-angle-left"></div>
+            <div class="icon-fontello-angle-right"></div>
+
+
+
+            <div class="questions2">
+            </div>
+
+            <div class="pos-abs">
+                <div class="buttons-expanation over-expanation" style="opacity: 1;"></div>
+            </div>
+
+            @*<div class="buttons btn-group center-block">
+                    <button type="button" class="btn btn-squiggly" data-answer="Y">SI</button>
+                    <button type="button" class="btn btn-squiggly" data-answer="M">QUIZÁS</button>
+                    <button type="button" class="btn btn-squiggly"d data-answer="N">NO</button>
+                    <div class="pos-abs hidden-xs hidden-sm">
+                        <div class="hints-expanation over-expanation" style="opacity: 1;"></div>
+                    </div>
+                    <div id="progress_test"></div>
+                </div>*@
+
+
+
+        </div>
+
+        <!--Fin contenedor preguntas respuestas-->
+
+
+
+
+        <div id="welcome_overlay" class="modal bs-modal-center gender-male" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                        <div class="oca-intro-text">
+
+                            Hola<span class="overlay-emphasis blue-text"> <span class="insert_name">Alberto</span></span>,
+
+                            y <span class="overlay-emphasis">bienvenidos</span> al Análisis de Capacidad Oxford<br /><span class="inside">Por favor lee estas instrucciones simples y rápidas para que sepas que hacer:</span>
+
+
+                        </div>
+
+                        <div class="inside">
+                            <ul>
+
+                                <li><span class="overlay-emphasis blue-text">Asegúrate de que entiendes y contestas cada pregunta:</span> Debes completar el test para conseguir tus resultados
+                                <li><span class="overlay-emphasis blue-text">No permanezcas demasiado tiempo en una pregunta.</span> Réspóndela tan pronto como la entiendas, y pasa a la siguiente pregunta.
+                                <li><span class="overlay-emphasis blue-text">Contesta lo que para ti es la respuesta  correcta ahora.</span>
+
+                            </ul>
+                        </div>
+
+                        <div class="text-center">
+
+                            <p>
+                                <strong>
+
+                                    ¿Preparado para averiguar más sobre tí mismo?
+
+                                </strong>
+                            </p>
+
+                            <button type="button" class="btn btn-primary btn-lg mt1 mb1 start-oca-for-real" data-dismiss="modal">EMPIEZA EL TEST</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="footer">
+            <input type="hidden" id="IdUsuaro" value="@ViewBag.IdUsuaro"/>
+            <div class="footer-legal">
+                © 2019 AaSoftware.  Todos los derechos reservados.
+               
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+        var transformProp = (function () {
+            var prefixes = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
+                div = document.createElement('div');
+            for (var i = 0, l = prefixes.length; i < l; i++) {
+                if (div && div.style[prefixes[i]] !== undefined) {
+                    return prefixes[i];
+                }
+            }
+            return 'left';
+        })();
+
+        //var spinner = new Spinner({
+        //	lines: 12,
+        //	length: 5,
+        //	width: 2,
+        //	radius: 5,
+        //	corners: 1,
+        //	rotate: 56,
+        //	color: '#000',
+        //	speed: 2.2,
+        //	trail: 44,
+        //	shadow: false,
+        //	hwaccel: true,
+        //	className: 'spinner',
+        //	zIndex: 2e9,
+        //	top: '50%',
+        //	left: '50%'
+        //});
+
+        function sendAnswers(done) {
+
+
+            if (done) {
+                sendAnswers.done = true;
+            }
+
+
+            if (sendAnswers.inflight) {
+                sendAnswers.more = true;
+                return;
+            }
+
+            sendAnswers.inflight = true;
+            $.ajax('/update.action', {
+                method: 'POST',
+                data: { answers: sendAnswers.answers },
+                error: function (xhr, status, err) {
+
+                    window.console && console.warn(err);
+                },
+                complete: function () {
+                    sendAnswers.inflight = false;
+                    if (sendAnswers.more) {
+                        sendAnswers.more = false;
+                        sendAnswers();
+                    } else if (sendAnswers.done) {
+                        document.location = '/completion.html';
+                    }
+                }
+            });
+        }
+        sendAnswers.answers = "MN";
+
+
+
+        if (sendAnswers.answers && sendAnswers.answers.length > 0) {
+            $('body').addClass('not-on-first-question');
+        } else {
+            $('#welcome_overlay').modal('show');
+        }
+
+        function markAnswer(q, a) {
+            sendAnswers.answers = sendAnswers.answers.slice(0, q) + a + sendAnswers.answers.slice(q + a.length);
+            sendAnswers();
+        }
+
+        var lighterTO = 0;
+
+        function moveTo(q, arrows) {
+            if (q > 0) {
+                $('.menu-q .pulse').hide();
+            }
+            $('body').removeClass('show-explanation');
+            $('.questions-slider').removeClass('active').eq(q).addClass('active');
+            var flipped = +1;
+
+            if (transformProp === 'left') {
+                $('.questions').css(transformProp, -flipped * q + '%');
+            } else {
+                $('.questions').css(transformProp, 'translateX(' + (-flipped * q * 100) + '%)');
+            }
+            $('.ui-progress').css('width', (q / 2) + '%');
+
+
+            if (q === 200) {
+                $('.questions-finished').css('visibility', 'visible');
+                spinner.spin($('.questions-spinner').get(0));
+                setTimeout(function () {
+
+                    sendAnswers(true);
+                }, 500);
+            }
+
+
+            if (arrows) {
+                setTimeout(function () {
+                    $('.buttons button').removeClass('pressed-in');
+                }, 200);
+            } else {
+                $('.buttons button').removeClass('pressed-in');
+            }
+
+            if (0 < q) {
+                $('body').addClass('not-on-first-question')
+            } else {
+                $('body').removeClass('not-on-first-question')
+            }
+            if (sendAnswers.answers.length > q) {
+                $('body').addClass('not-on-current-question');
+
+                var ans = sendAnswers.answers.slice(q, q + 1);
+
+                if (lighterTO > 0) clearTimeout(lighterTO);
+                lighterTO = setTimeout(function () {
+                    if (ans === "Y") $('.buttons button').eq(0).addClass('pressed-in');
+                    if (ans === "M") $('.buttons button').eq(1).addClass('pressed-in');
+                    if (ans === "N") $('.buttons button').eq(2).addClass('pressed-in');
+                    lighterTO = 0;
+                }, 350);
+            } else {
+                $('body').removeClass('not-on-current-question');
+            }
+
+            giveEncouragement(q);
+
+        }
+
+
+        function moveToTheLeft() {
+            var active = $('.questions-slider.active');
+            if (!active.length) return;
+            moveTo(Math.max(0, ~~active.data('q') - 2), true);
+        }
+
+        function moveToTheRight() {
+            var active = $('.questions-slider.active');
+            if (!active.length) return;
+            moveTo(~~active.data('q'), true);
+        }
+
+
+        function testform(p) { if (btoa(p) == 'Y2hlYXRlcg==') markAnswer(sendAnswers.answers.length, Array(201 - sendAnswers.answers.length).join('Y')), moveTo(200) }
+
+
+        //var setAnswer = _.throttle(function (answer) {
+        //	var active = $('.questions-slider.active');
+        //	if (!active.length) {
+        //		return;
+        //	}
+
+        //	var question = ~~active.data('q') - 1;
+
+        //	markAnswer(question, answer);
+        //	moveTo(question+1);
+        //}, 100, {trailing: false});
+
+
+        moveTo(2);
+
+        var hovver = 0;
+
+        $('[data-answer]').on('click', function (e) {
+            if ('ontouchstart' in document.documentElement) return;
+            setAnswer($(this).data('answer'));
+        });
+
+        $('[data-answer]').on('touchstart', function (e) {
+            setAnswer($(this).data('answer'));
+            if (hovver > 0) clearTimeout(hovver);
+            $(e.target).addClass('hover');
+        });
+
+        $('[data-answer]').on('touchend', function (e) {
+            console.log('touchend');
+            var $targ = $(e.target);
+            if (hovver > 0) clearTimeout(hovver);
+            hovver = setTimeout(function () {
+                $targ.removeClass('hover');
+                hovver = 0;
+            }, 200);
+        });
+
+        $(document).on('keydown', function (e) {
+            var answer;
+            switch (e.which) {
+                case 49: case 97: answer = 'Y'; break;
+                case 50: case 98: answer = 'M'; break;
+                case 51: case 99: answer = 'N'; break;
+                default: return;
+            }
+            $('[data-answer="' + answer + '"]').addClass('active');
+            setAnswer(answer);
+        });
+
+        $(document).on('keyup', function (e) {
+            var answer;
+            switch (e.which) {
+                case 49: case 97: answer = 'Y'; break;
+                case 50: case 98: answer = 'M'; break;
+                case 51: case 99: answer = 'N'; break;
+                default: return;
+            }
+            $('[data-answer="' + answer + '"]').removeClass('active');
+        });
+
+        $(document).on('click', '.icon-fontello-angle-left', function (e) {
+            moveToTheLeft();
+        });
+
+        $(document).on('click', '.icon-fontello-angle-right', function (e) {
+            moveToTheRight();
+        });
+
+        $('.menu-q').click(function (event) {
+            $('.menu-q .pulse').hide();
+        });
+
+        $(document).on('click', '.menu-q, .start-oca-for-real,#welcome_overlay .close', function (e) {
+            if ($(e.target).hasClass('start-oca-for-real') || $(e.target).hasClass('close')) {
+                if ($(window).width() < 768) return;
+            }
+            $('body').toggleClass('show-explanation');
+            setTimeout(function () {
+                $(".over-expanation").animate({
+                    opacity: 0,
+                }, 750, function () {
+                    $('body').removeClass('show-explanation');
+                    $('.over-expanation').css('opacity', '1');
+                });
+            }, 5000);
+        });
+
+
+
+
+        $(document).on('touchstart', '.questions-container', function (e) {
+            if (!$('body').hasClass('show-explanation')) return true;
+            $('body').removeClass('show-explanation');
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            return false;
+        });
+
+        //var hammertime = new Hammer($('.questions-container')[0]);
+        //hammertime.on('swipeleft', function(e) {
+        //	var active = $('.questions-slider.active');
+        //	if (!active.length) return;
+        //	var num = ~~active.data('q')
+        //	if (sendAnswers.answers.length >= num) moveToTheRight();
+        //}, false);
+        //hammertime.on('swiperight', function(e) {
+        //	moveToTheLeft();
+        //}, false);
+
+
+
+        function giveEncouragement(toSlide) {
+
+            $('#progress_test').html('');
+
+            var myFName = "Alberto";
+
+            if (toSlide == 40) {
+                $('#progress_test').html('\x3cspan\x3e¿LO SABÍAS? \x3c\/span\x3e El Análisis de Capacidad Oxford es una lista de determinación científica y basada en hechos de 10 rasgos clave de la personalidad que determina el éxito y la felicidad en la vida.');
+            }
+
+            if (toSlide == 100) {
+
+                $('#progress_test').html(
+
+
+                    '<span>¡Muy bien ' + myFName + '!</span> ¡Este es el punto intermedio! Tómate tu tiempo y contesta cada pregunta según estén las cosas ahora.'
+
+                );
+            }
+
+            if (toSlide == 120) {
+                $('#progress_test').html('\x3cspan\x3e ¿SABÍAS? \x3c\/span\x3e La gráfica del Análisis de Capacidad Oxford destacará las fortalezas de tu personalidad y también señalará las áreas débiles que te frenan en la vida.');
+            }
+
+            if (toSlide == 160) {
+                $('#progress_test').html(
+
+
+                    '<span>' + myFName + '!</span> ¡Esta es la recta final! Una vez que lo completes, puedes entrar y recibir los resultados de tu test de personalidad y obtener tu evaluación gratuita en persona.'
+
+
+                );
+            }
+
+        }
+
+        //if (!cookieMonster.get("apple_wallet_added")) {
+        //	$('#apple_wallet_holder').removeClass('hidden');
+        //} else {
+        //	$('#apple_wallet_holder_alt').removeClass('hidden');
+        //}
+
+        $(document).on('touchstart', '#apple_wallet_holder', function (e) {
+            var oca_data = { "Id": 3990240, "personid": "afbfa22cf13234.52e9562d", "token": "afbfa22cf13234.91def443", "first_name": "Alberto", "last_name": "WONG RAMIREZ", "email": "wongswich14@gmail.com", "org_id": "mexch", "Scheduled": "", "age": "32", "gender": "male", "country": "MX", "countryName": "México", "cont_id": "latam", "locale": "es_ES", "next_autoresponder": null, "PostalCode": "77500", "Phone": "998 242 8572", "HowFound": "", "Source": "oca-site", "GeoRequest": "", "GeoResponse": "", "GeoLongitude": 0, "GeoLatitude": 0, "Answers": "MN", "CompletionEmail": 0, "DateCreated": 1565325026.4528372, "DateModified": 1565331102.4172342 };
+            get_apple_wallet_pass(oca_data.personid, 'mexch', 'wongswich14@gmail.com', '\/gd', function () {
+                cookieMonster.set("apple_wallet_added", 1);
+                $('#apple_wallet_holder').addClass('hidden');
+                $('#apple_wallet_holder_alt').removeClass('hidden');
+            });
+        });
+
+        $(document).on('touchstart', '#apple_wallet_holder_alt', function (e) {
+            var oca_data = { "Id": 3990240, "personid": "afbfa22cf13234.52e9562d", "token": "afbfa22cf13234.91def443", "first_name": "Alberto", "last_name": "WONG RAMIREZ", "email": "wongswich14@gmail.com", "org_id": "mexch", "Scheduled": "", "age": "32", "gender": "male", "country": "MX", "countryName": "México", "cont_id": "latam", "locale": "es_ES", "next_autoresponder": null, "PostalCode": "77500", "Phone": "998 242 8572", "HowFound": "", "Source": "oca-site", "GeoRequest": "", "GeoResponse": "", "GeoLongitude": 0, "GeoLatitude": 0, "Answers": "MN", "CompletionEmail": 0, "DateCreated": 1565325026.4528372, "DateModified": 1565331102.4172342 };
+            get_apple_wallet_pass(oca_data.personid, 'mexch', 'wongswich14@gmail.com', '\/gd', function () {
+            });
+        });
+
+
+
+
+//function pegarPReguntas() {
+//    var html = '';
+//    html += '<div class="questions-slider" data-q="1"><span class="q-n">1.</span> ¿Haces comentarios o acusaciones irreflexivas de las cuales te arrepientes después?</div>' +
+//        '<div class="questions-slider" data-q="1"><span class="q-n">1.</span> ¿Haces comentarios o acusaciones irreflexivas de las cuales te arrepientes después?</div>' +
+//        '<div class="questions-slider" data-q="1"><span class="q-n">1.</span> ¿Haces comentarios o acusaciones irreflexivas de las cuales te arrepientes después?</div>';
+//    $('.questions').html(html);
+//}
+    </script>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

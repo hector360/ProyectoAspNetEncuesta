@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a32d7b9829f848fdba3b9f26e6b56290" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="SurveyModel.Certezas" Width="1.5" PointX="1.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.EncuestaCertezas" Width="1.5" PointX="3.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.EncuestaTipo" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.Paises" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.PreguntaRespuestas" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.Preguntas" Width="1.5" PointX="3.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SurveyModel.Usuarios" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="SurveyModel.FK_EncuestaCertezas_Certezas" ManuallyRouted="false" />
+        <AssociationConnector Association="SurveyModel.FK_Preguntas_Certezas" ManuallyRouted="false" />
+        <AssociationConnector Association="SurveyModel.FK_EncuestaCertezas_EncuestaTipo" ManuallyRouted="false" />
+        <AssociationConnector Association="SurveyModel.FK_Usuarios_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="SurveyModel.FK_PreguntaRespuestas_Preguntas" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SurveyModel.sysdiagrams" Width="1.5" PointX="8.375" PointY="6.75" />
+        <EntityTypeShape EntityType="SurveyModel.UsuarioAdmin" Width="1.5" PointX="8.375" PointY="9.75" />
+        <EntityTypeShape EntityType="SurveyModel.PreguntaTipo" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SurveyModel.Empresas" Width="1.5" PointX="10.125" PointY="1" />
+        <EntityTypeShape EntityType="SurveyModel.UsuarioRespuestas" Width="1.5" PointX="11.25" PointY="7.125" />
+        <AssociationConnector Association="SurveyModel.FK_UsuarioRespuestas_EncuestaTipo" />
+        <AssociationConnector Association="SurveyModel.FK_UsuarioRespuestas_EncuestaTipo1" />
+        <AssociationConnector Association="SurveyModel.FK_UsuarioRespuestas_PreguntaRespuestas1" />
+        <AssociationConnector Association="SurveyModel.FK_UsuarioRespuestas_Preguntas" />
+        <AssociationConnector Association="SurveyModel.FK_UsuarioRespuestas_Usuarios1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

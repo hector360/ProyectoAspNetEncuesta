@@ -1,0 +1,33 @@
+.card-header{
+    background:#FFFFFF;
+    color:#FFF;
+}
+
+body, .dashboard-counts{
+    
+    background-image: url(../Content/img/ENTRADA.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.txt-dorado, .txt-dorado:hover, .fa, a, a:hover{
+    color:#C9AA5D;
+}
+
+.btn, .btn:hover{
+    background:#C9AA5D;
+    border:#C9AA5D;
+}
+ul.side-menu li {
+    border-bottom: 1px solid #c9aa5d;
+    width:80%;
+    padding:5px;
+}
+.mlf-30{
+  margin-left: 30px;
+}
+.side-navbar{
+    width:300px;
+}
